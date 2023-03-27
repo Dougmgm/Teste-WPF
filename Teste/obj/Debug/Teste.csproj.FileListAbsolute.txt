@@ -1,0 +1,15 @@
+C:\Users\douglas.menchon\Documents\Teste WPF\Teste\Teste\bin\Debug\Teste.exe.config
+C:\Users\douglas.menchon\Documents\Teste WPF\Teste\Teste\bin\Debug\Teste.exe
+C:\Users\douglas.menchon\Documents\Teste WPF\Teste\Teste\bin\Debug\Teste.pdb
+C:\Users\douglas.menchon\Documents\Teste WPF\Teste\Teste\obj\Debug\MainWindow.g.cs
+C:\Users\douglas.menchon\Documents\Teste WPF\Teste\Teste\obj\Debug\App.g.cs
+C:\Users\douglas.menchon\Documents\Teste WPF\Teste\Teste\obj\Debug\Teste_MarkupCompile.cache
+C:\Users\douglas.menchon\Documents\Teste WPF\Teste\Teste\obj\Debug\Teste_MarkupCompile.lref
+C:\Users\douglas.menchon\Documents\Teste WPF\Teste\Teste\obj\Debug\MainWindow.baml
+C:\Users\douglas.menchon\Documents\Teste WPF\Teste\Teste\obj\Debug\Teste.g.resources
+C:\Users\douglas.menchon\Documents\Teste WPF\Teste\Teste\obj\Debug\Teste.Properties.Resources.resources
+C:\Users\douglas.menchon\Documents\Teste WPF\Teste\Teste\obj\Debug\Teste.csproj.GenerateResource.cache
+C:\Users\douglas.menchon\Documents\Teste WPF\Teste\Teste\obj\Debug\Teste.csproj.CoreCompileInputs.cache
+C:\Users\douglas.menchon\Documents\Teste WPF\Teste\Teste\obj\Debug\Teste.exe
+C:\Users\douglas.menchon\Documents\Teste WPF\Teste\Teste\obj\Debug\Teste.pdb
+C:\Users\douglas.menchon\Documents\Teste WPF\Teste\Teste\obj\Debug\Teste.csprojAssemblyReference.cache
