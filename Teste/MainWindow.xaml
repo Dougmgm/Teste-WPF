@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Teste"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" 
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
@@ -16,147 +17,148 @@
 
                 <!--Categorias-->
                 <StackPanel Grid.Column="0" >
-                    <Button x:Name="PessoaButton" Content="Pessoa" Background="Transparent" Height="70"/>
-                    <Button x:Name="ProdutoButton" Content="Produto" Background="Transparent" Height="70" />
-                    <Button x:Name="PedidoButton" Content="Pedido" Background="Transparent" Height="70" />
+                    <Button x:Name="PessoaButton" Click="PessoaButton_Click" Content="Pessoa" Background="Transparent" Height="70"/>
+                    <Button x:Name="ProdutoButton" Click="ProdutoButton_Click" Content="Produto" Background="Transparent" Height="70" />
+                    <Button x:Name="PedidoButton" Click="PedidoButton_Click" Content="Pedido" Background="Transparent" Height="70" />
                 </StackPanel>
-                <!--Categorias-->
 
+                <!-- DataGrid Pessoa -->
+                <Grid Grid.Column="1" x:Name="TelaPessoa" Background="AliceBlue" Visibility="Hidden">
 
-                <!--Tela Pessoa -->
-                <StackPanel Grid.Column="1" Margin="20 0 0 0" Visibility="Collapsed" >
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="8*" />
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
+                    <StackPanel Margin="10 10 10 90">
 
-                        <StackPanel Grid.Column="1" Margin="0 0 20 0">
-                            <TextBlock Text="ID" FontWeight="Bold" Margin="0 20 0 0" />
-                            <TextBox IsReadOnly="True" Background="#eee" Padding="2" Margin="0 0 0 2">999</TextBox>
-                        </StackPanel>
-
-                        <StackPanel Grid.Column="0">
-                            <TextBlock Text="NOME" FontWeight="Bold" Margin="0 20 0 0" />
-                            <TextBox IsReadOnly="True" Background="#eee" Padding="2" Margin="0, 0, 15, 2" >teste</TextBox>
-                        </StackPanel>
-
-                        <Button Grid.Column="2" x:Name="PesquisaNomeButton" Height="25" Width="25" HorizontalAlignment="Left" VerticalAlignment="Bottom" >
-                            <Image Source="Images/Lupa.png"/>
-                        </Button>
-                    </Grid>
-
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="8*"/>
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-
-                        <StackPanel Grid.Column="0" Grid.ColumnSpan="2">
-                            <TextBlock Text="CPF" FontWeight="Bold"/>
-                            <TextBox IsReadOnly="True" Background="#eee" Padding="2" Margin="0, 2, 15, 2" Text="000.000.000-00"/>
-                        </StackPanel>
-
-                        <Button Grid.Column="2" x:Name="PesquisaCpfButton" Height="25" Width="25" HorizontalAlignment="Left" VerticalAlignment="Bottom">
-                            <Image Source="Images/Lupa.png"/>
-                        </Button>
-                    </Grid>
-
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="8*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-
-                        <StackPanel Grid.Column="0" Grid.ColumnSpan="2">
-                            <TextBlock Text="ENDEREÇO" FontWeight="Bold" Margin="0 2 0 2"/>
-                            <TextBox IsReadOnly="True" Background="#eee" Padding="2" Text="teste" Margin="0, 2, 15, 2"/>
-                        </StackPanel>
-                    </Grid>
-
-                    <!-- Botões -->
-                    <Grid Margin="0 50 80 0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="4*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-
-                        <Button Grid.Column="0" Content="Incluir" Width="100" HorizontalAlignment="Left" Background="GreenYellow"/>
-                        <Button Grid.Column="1" Content="Alterar" Width="100" HorizontalAlignment="Left" Margin="20 0 0 0" Background="SkyBlue"/>
-                        <Button Grid.Column="2" Content="Excluir" Width="100" HorizontalAlignment="Right" Margin="0 0 0 0" Background="Red" />
-                    </Grid>
-                </StackPanel>
-                <!--Tela Pessoa -->
-
-                <!-- Tela Produto -->
-
-                <Grid Grid.Column="1" Visibility="Visible">
-                    <StackPanel>
-                        <Grid  Margin="20 0 0 0">
+                        <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="8*" />
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-
-                            <StackPanel Grid.Column="1" Margin="0 0 20 0">
-                                <TextBlock Text="ID" FontWeight="Bold" Margin="0 20 0 0" />
-                                <TextBox IsReadOnly="True" Background="#eee" Padding="2" Margin="0 0 0 2">999</TextBox>
-                            </StackPanel>
-
-                            <StackPanel Grid.Column="0">
-                                <TextBlock Text="NOME DO PRODUTO" FontWeight="Bold" Margin="0 20 0 0" />
-                                <TextBox IsReadOnly="True" Background="#eee" Padding="2" Margin="0, 0, 15, 2" >teste</TextBox>
-                            </StackPanel>
-
-                            <Button Grid.Column="2" x:Name="PesquisaProdutoButton" Height="25" Width="25" 
-                                   HorizontalAlignment="Left" VerticalAlignment="Bottom">
-                                <Image Source="Images/Lupa.png"/>
-                            </Button>
-                        </Grid>
-
-                        <Grid Margin="20 0 0 0 ">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="8*"/>
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-
-                            <StackPanel Grid.Column="0" Margin="0 0 20 0">
-                                <TextBlock Text="CODIGO" FontWeight="Bold" Margin="0 20 0 0" />
-                                <TextBox IsReadOnly="True" Background="#eee" Padding="2" Margin="0 0 0 2">999</TextBox>
-
-                            </StackPanel>
-
-                            <StackPanel Grid.Column="1">
-                                <TextBlock Text="VALOR" FontWeight="Bold" Margin="0 20 0 0" />
-                                <TextBox IsReadOnly="True" Background="#eee" Padding="2" Margin="0, 0, 400, 2" />
-                            </StackPanel>
-
-                            <Button Grid.Column="1" Height="25" Width="25" Margin="155,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Bottom">
-                                <Image Source="Images/Lupa.png"/>
-                            </Button>
-                        </Grid>
-
-                        <!-- Botões -->
-                        <Grid Margin="20 50 80 0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="30"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
 
-                            <Button Grid.Column="0" Content="Incluir" Width="100" HorizontalAlignment="Left" Background="GreenYellow"/>
-                            <Button Grid.Column="1" Content="Alterar" Width="100" HorizontalAlignment="Left" Margin="20 0 0 0" Background="SkyBlue"/>
-                            <Button Grid.Column="2" Content="Excluir" Width="100" HorizontalAlignment="Right" Margin="0 0 0 0" Background="Red" />
+                            <Button Grid.Column="0" Height="20" Width="20" HorizontalAlignment="Left" Margin="3">
+                                <Image Source="Images/Lupa.png"/>
+                            </Button>
+                            <TextBox Grid.Column="1" Text="EXEMPLO DE PESQUISA" Background="White"
+                                       VerticalAlignment="Center" />
                         </Grid>
 
+
+                        <DataGrid x:Name="DataGridPessoa" Height="324" >
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="*" />
+                                <DataGridTextColumn Header="Nome" Binding="{Binding Nome}" Width="*"/>
+                                <DataGridTextColumn Header="CPF" Binding="{Binding Cpf}" Width="*"/>
+                                <DataGridTextColumn Header="Endereço" Binding="{Binding Endereco}" Width="*"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
                     </StackPanel>
+                    
+                    <Grid Grid.Column="1" Margin="20 0 0 -300" Height="30" >
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".5*"/>
+                            <ColumnDefinition Width=".5*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button Grid.Column = "0" Content="Incluir" x:Name="IncluirPessoa" Click="IncluirPessoa_Click" Background="GreenYellow" Height="20" Width="75" HorizontalAlignment="Left"/>
+                        <Button Grid.Column = "1" Content ="Alterar" x:Name="AlterarPessoa"  Background="SkyBlue" Height="20" Width="75" HorizontalAlignment="Left"/>
+                        <Button Grid.Column = "2" Content ="Salvar" x:Name="SalvarPessoa"  Background="SkyBlue" Height="20" Width="75" HorizontalAlignment="Left"/>
+                        <Button Grid.Column = "3" Content ="Excluir" x:Name="ExcluirPessoa"  Background="LightPink" Height="20" Width="75" HorizontalAlignment="Center"/>
+                    </Grid>
+
                 </Grid>
+
+                <!-- DataGrid Produto -->
+                <Grid Grid.Column="1" x:Name="TelaProduto" Background="AliceBlue" Visibility="Collapsed">
+
+                    <StackPanel Margin="10 10 10 90">
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            
+                            <Button Grid.Column="0" Height="20" Width="20" HorizontalAlignment="Left" Margin="3">
+                                <Image Source="Images/Lupa.png"/>
+                            </Button>
+                            <TextBox Grid.Column="1" Text="EXEMPLO DE PESQUISA" Background="White"
+                                       VerticalAlignment="Center" />
+                        </Grid>
+
+                        <DataGrid x:Name="DataGridProduto" Height="324" >
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="ID" Binding="{Binding IdProduto}" Width="*" />
+                                <DataGridTextColumn Header="Nome" Binding="{Binding NomeProduto}" Width="*"/>
+                                <DataGridTextColumn Header="Codigo" Binding="{Binding Codigo}" Width="*"/>
+                                <DataGridTextColumn Header="Valor" Binding="{Binding Valor}" Width="*"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+
+                    <Grid Grid.Column="1"  Margin="20 0 0 -300" Height="30">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".5*"/>
+                            <ColumnDefinition Width=".5*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button Grid.Column = "0" Content="Incluir" x:Name="IncluirProduto" Click="IncluirProduto_Click" Background="GreenYellow" Height="20" Width="75" HorizontalAlignment="Left"/>
+                        <Button Grid.Column = "1" Content ="Alterar" x:Name="AlterarProduto"  Background="SkyBlue" Height="20" Width="75" HorizontalAlignment="Left"/>
+                        <Button Grid.Column = "2" Content ="Salvar" x:Name="SalvarProduto"  Background="SkyBlue" Height="20" Width="75" HorizontalAlignment="Left"/>
+                        <Button Grid.Column = "3" Content ="Excluir" x:Name="ExcluirProduto"  Background="LightPink" Height="20" Width="75" HorizontalAlignment="Center"/>
+                    </Grid>
+                </Grid>
+
+                <!-- Tela Pedidos -->
+                <Grid Grid.Column="1" x:Name="TelaPedido" Background="AliceBlue" Visibility="Visible">
+
+                    <StackPanel Margin="10 10 10 90">
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Button Grid.Column="0" Height="20" Width="20" HorizontalAlignment="Left" Margin="3">
+                                <Image Source="Images/Lupa.png"/>
+                            </Button>
+                            <TextBox Grid.Column="1" Text="EXEMPLO DE PESQUISA" Background="White"
+                                       VerticalAlignment="Center" />
+                        </Grid>
+
+                        <DataGrid x:Name="DataGridPedido" Height="324" >
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="ID" Binding="{Binding IdProduto}" Width="*" />
+                                <DataGridTextColumn Header="Nome" Binding="{Binding NomeProduto}" Width="*"/>
+                                <DataGridTextColumn Header="Produtos" Binding="{Binding Codigo}" Width="*"/>
+                                <DataGridTextColumn Header="Data" Binding="{Binding Valor}" Width="*"/>
+                                <DataGridTextColumn Header="Pagamento" Binding="{Binding Valor}" Width="*"/>
+                                <DataGridTextColumn Header="Status" Binding="{Binding Valor}" Width="*"/>
+                                <DataGridTextColumn Header="Valor Total" Binding="{Binding Valor}" Width="*"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+
+                    <Grid Grid.Column="1"  Margin="20 0 0 -300" Height="30">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".5*"/>
+                            <ColumnDefinition Width=".5*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button Grid.Column = "0" Content="Incluir" x:Name="IncluirPedido" Click="IncluirProduto_Click" Background="GreenYellow" Height="20" Width="75" HorizontalAlignment="Left"/>
+                        <Button Grid.Column = "1" Content ="Expandir" x:Name="AlterarPedido"  Background="SkyBlue" Height="20" Width="75" HorizontalAlignment="Left"/>
+                        <Button Grid.Column = "2" Content ="Alterar" x:Name="SalvarPedido"  Background="SkyBlue" Height="20" Width="75" HorizontalAlignment="Left"/>
+                        <Button Grid.Column = "3" Content ="Excluir" x:Name="ExcluirPedido"  Background="LightPink" Height="20" Width="75" HorizontalAlignment="Center"/>
+                    </Grid>
+                </Grid>
+
             </Grid>
         </StackPanel>
     </Grid>
