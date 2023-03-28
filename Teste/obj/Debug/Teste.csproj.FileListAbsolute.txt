@@ -13,3 +13,19 @@ C:\Users\douglas.menchon\Documents\Teste WPF\Teste\Teste\obj\Debug\Teste.csproj.
 C:\Users\douglas.menchon\Documents\Teste WPF\Teste\Teste\obj\Debug\Teste.exe
 C:\Users\douglas.menchon\Documents\Teste WPF\Teste\Teste\obj\Debug\Teste.pdb
 C:\Users\douglas.menchon\Documents\Teste WPF\Teste\Teste\obj\Debug\Teste.csprojAssemblyReference.cache
+C:\Users\Douglas\Desktop\Teste-WPF\Teste\bin\Debug\Teste.exe.config
+C:\Users\Douglas\Desktop\Teste-WPF\Teste\bin\Debug\Teste.exe
+C:\Users\Douglas\Desktop\Teste-WPF\Teste\bin\Debug\Teste.pdb
+C:\Users\Douglas\Desktop\Teste-WPF\Teste\obj\Debug\Teste.csproj.AssemblyReference.cache
+C:\Users\Douglas\Desktop\Teste-WPF\Teste\obj\Debug\Teste.csproj.SuggestedBindingRedirects.cache
+C:\Users\Douglas\Desktop\Teste-WPF\Teste\obj\Debug\MainWindow.g.cs
+C:\Users\Douglas\Desktop\Teste-WPF\Teste\obj\Debug\App.g.cs
+C:\Users\Douglas\Desktop\Teste-WPF\Teste\obj\Debug\Teste_MarkupCompile.cache
+C:\Users\Douglas\Desktop\Teste-WPF\Teste\obj\Debug\Teste_MarkupCompile.lref
+C:\Users\Douglas\Desktop\Teste-WPF\Teste\obj\Debug\MainWindow.baml
+C:\Users\Douglas\Desktop\Teste-WPF\Teste\obj\Debug\Teste.g.resources
+C:\Users\Douglas\Desktop\Teste-WPF\Teste\obj\Debug\Teste.Properties.Resources.resources
+C:\Users\Douglas\Desktop\Teste-WPF\Teste\obj\Debug\Teste.csproj.GenerateResource.cache
+C:\Users\Douglas\Desktop\Teste-WPF\Teste\obj\Debug\Teste.csproj.CoreCompileInputs.cache
+C:\Users\Douglas\Desktop\Teste-WPF\Teste\obj\Debug\Teste.exe
+C:\Users\Douglas\Desktop\Teste-WPF\Teste\obj\Debug\Teste.pdb

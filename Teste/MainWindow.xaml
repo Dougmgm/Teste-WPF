@@ -24,7 +24,7 @@
                 
                 
                 <!--Tela Pessoa -->
-                <StackPanel Grid.Column="1" Margin="20 0 0 0 ">
+                <StackPanel Grid.Column="1" Margin="20 0 0 0 " Visibility="Collapsed" >
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
@@ -92,7 +92,7 @@
                         
 
                         <Button Grid.Column="0" Content="Incluir" Width="100" HorizontalAlignment="Left" Background="GreenYellow"/>
-                        <Button Grid.Column="1" Content="Alterar" Width="100" HorizontalAlignment="Left" Margin="0 0 0 0" Background="SkyBlue"/>
+                        <Button Grid.Column="1" Content="Alterar" Width="100" HorizontalAlignment="Left" Margin="20 0 0 0" Background="SkyBlue"/>
                         <Button Grid.Column="2" Content="Excluir" Width="100" HorizontalAlignment="Right" Margin="0 0 0 0" Background="Red" />
 
 
@@ -100,8 +100,60 @@
                 </StackPanel>
                 <!--Tela Pessoa -->
                 
-                
-                
+                <!-- Tela Produto -->
+
+                <Grid Grid.Column="1">
+
+                    <StackPanel>
+                    
+                        <Grid  Margin="20 0 0 0 ">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="8*"/>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                        
+                            <StackPanel Grid.Column="0" Margin="0 0 20 0">
+                                <TextBlock Text="ID" FontWeight="Bold" Margin="0 20 0 0" />
+                                <TextBox IsReadOnly="True" Background="#eee" Padding="2" Margin="0 0 0 2">999</TextBox>
+                            </StackPanel>
+                        
+                            <StackPanel Grid.Column="1">
+                                <TextBlock Text="NOME DO PRODUTO" FontWeight="Bold" Margin="0 20 0 0" />
+                                <TextBox IsReadOnly="True" Background="#eee" Padding="2" Margin="0, 0, 15, 2" >teste</TextBox>
+                            </StackPanel>
+                        
+                                <Button Grid.Column="2" x:Name="PesquisaProdutoButton" Height="25" Width="25" 
+                                        HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                                    <Image Source="Images/Lupa.png"/>
+                                </Button>
+                        </Grid>
+                        
+                        <Grid Margin="20 0 0 0 ">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="8*"/>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0" Margin="0 0 20 0">
+                                <TextBlock Text="CODIGO" FontWeight="Bold" Margin="0 20 0 0" />
+                                <TextBox IsReadOnly="True" Background="#eee" Padding="2" Margin="0 0 0 2">999</TextBox>
+                                <Button Height="20" Margin="2">
+                                    <Image Source="Images/Lupa.png"/>
+                                </Button>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1">
+                                <TextBlock Text="VALOR" FontWeight="Bold" Margin="0 20 0 0" />
+                                <TextBox IsReadOnly="True" Background="#eee" Padding="2" Margin="0, 0, 400, 2" />
+                                
+
+
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </Grid>
                 
             </Grid>
         </StackPanel>
