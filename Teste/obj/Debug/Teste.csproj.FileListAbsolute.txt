@@ -67,3 +67,5 @@ C:\Users\douglas.menchon\Desktop\C#\Course\Teste-WPF\Teste\obj\Debug\CadastroPes
 C:\Users\douglas.menchon\Desktop\C#\Course\Teste-WPF\Teste\obj\Debug\CadastroPessoa.baml
 C:\Users\douglas.menchon\Desktop\C#\Course\Teste-WPF\Teste\obj\Debug\CadastrarProduto.g.cs
 C:\Users\douglas.menchon\Desktop\C#\Course\Teste-WPF\Teste\obj\Debug\CadastrarProduto.baml
+C:\Users\douglas.menchon\Desktop\C#\Course\Teste-WPF\Teste\obj\Debug\CadastrarPedido.g.cs
+C:\Users\douglas.menchon\Desktop\C#\Course\Teste-WPF\Teste\obj\Debug\CadastrarPedido.baml

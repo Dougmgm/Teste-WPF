@@ -20,18 +20,25 @@ namespace Teste
     /// </summary>
     public partial class MainWindow : Window
     {
+        private List<Pessoa> pessoas;
+
         public MainWindow()
         {
+
+            pessoas = new List<Pessoa>();
+
+            pessoas.Add(new Pessoa());
+
             InitializeComponent();
 
             Pessoa teste = new Pessoa();
 
-            teste.IdPessoa = 123;
+            teste.IdPessoa = "123";
             teste.Nome = "Teste da Silva";
             teste.Cpf = "000.123.456-98";
             teste.Endereco = "rua do teste testado, 659";
 
-            DataGridPessoa.Items.Add(teste);
+            DataGridPessoa.Items.Add(pessoas);
 
             Produtos teste2 = new Produtos();
             teste2.Codigo = 5;
@@ -67,7 +74,6 @@ namespace Teste
         private void IncluirPessoa_Click(object sender, RoutedEventArgs e)
         {
             CadastroPessoa cadastroPessoa = new CadastroPessoa();
-            //this.Visibility = Visibility.Hidden;
             cadastroPessoa.Show();
         }
 
@@ -77,5 +83,44 @@ namespace Teste
             cadastrarProduto.Show();
         }
 
+        private void IncluirPedido_Click(object sender, RoutedEventArgs e)
+        {
+            CadastrarPedido cadastrarPedido = new CadastrarPedido();
+            cadastrarPedido.Show();
+        }
+
+        // BOTÕES PESSOA
+        private void AlterarPessoa_Click(object sender, RoutedEventArgs e)
+        {
+            this.SalvarPessoa.Visibility = Visibility.Visible;
+        }
+
+        private void SalvarPessoa_Click(object sender, RoutedEventArgs e)
+        {
+            this.SalvarPessoa.Visibility = Visibility.Collapsed;
+        }
+
+        // BOTÕES PRODUTOS
+
+        private void AlterarProduto_Click(object sender, RoutedEventArgs e)
+        {
+            this.SalvarProduto.Visibility = Visibility.Visible;
+        }
+
+        private void SalvarProduto_Click(object sender, RoutedEventArgs e)
+        {
+            this.SalvarProduto.Visibility = Visibility.Collapsed;
+        }
+
+        // BOTÕES PEDIDOS
+        private void AlterarPedido_Click(object sender, RoutedEventArgs e)
+        {
+            this.SalvarPedido.Visibility = Visibility.Visible;
+        }
+
+        private void SalvarPedido_Click(object sender, RoutedEventArgs e)
+        {
+            this.SalvarPedido.Visibility = Visibility.Collapsed;
+        }
     }
 }

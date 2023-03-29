@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Teste"
         mc:Ignorable="d"
-        Title="CadastroPessoa" Height="450" Width="800">
+        Title="Cadastro Pessoa" Height="450" Width="800">
     <Grid>
         <Grid>
             <!--Tela Pessoa -->
@@ -18,15 +18,14 @@
                     </Grid.ColumnDefinitions>
 
                     <StackPanel Grid.Column="1" Margin="0 0 20 0">
-                        <TextBlock Text="ID" FontWeight="Bold" Margin="0 20 0 0" />
+                        <TextBlock Text="ID" x:Name="IdPessoaTB" FontWeight="Bold" Margin="0 20 0 0" />
                         <TextBox IsReadOnly="True" Background="#eee" Padding="2" Margin="0 0 0 2" Text="999"/>
                     </StackPanel>
 
                     <StackPanel Grid.Column="0">
                         <TextBlock Text="NOME" FontWeight="Bold" Margin="0 20 0 0" />
-                        <TextBox Padding="2" Margin="0, 0, 15, 2" Text="DOUGLAS MENCHON GOES MARTINS"/>
+                        <TextBox  x:Name="NomePessoaTB" Padding="2" Margin="0, 0, 15, 2" Text="DOUGLAS MENCHON GOES MARTINS"/>
                     </StackPanel>
-
                 </Grid>
 
                 <Grid>
@@ -38,10 +37,9 @@
 
                     <StackPanel Grid.Column="0" Grid.ColumnSpan="2">
                         <TextBlock Text="CPF" FontWeight="Bold"/>
-                        <TextBox  Padding="2" Margin="0, 2, 15, 2" 
+                        <TextBox   x:Name="CpfPessoaTB" Padding="2" Margin="0, 2, 15, 2" 
                                      Width="100" HorizontalAlignment="Left" Text="000.000.000-00" />
                     </StackPanel>
-
                 </Grid>
 
                 <Grid>
@@ -53,7 +51,7 @@
 
                     <StackPanel Grid.Column="0" Grid.ColumnSpan="2">
                         <TextBlock Text="ENDEREÇO" FontWeight="Bold" Margin="0 2 0 2"/>
-                        <TextBox Padding="2" Text="Rua Líbero Badaró, 252 - Zona 7, Maringá - PR, 87030-080" Margin="0, 2, 15, 2"/>
+                        <TextBox  x:Name="EnderecoPessoaTB" Padding="2" Text="Rua Líbero Badaró, 252 - Zona 7, Maringá - PR, 87030-080" Margin="0, 2, 15, 2"/>
                     </StackPanel>
                 </Grid>
 
@@ -64,8 +62,8 @@
                         <ColumnDefinition Width="4*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Button Grid.Column="0" x:Name="SalvarPessoa" Content="Salvar" Width="100" HorizontalAlignment="Left" Background="GreenYellow"/>
-                    <Button Grid.Column="1" x:Name="CancelarPessoa" Click="CancelarPessoa_Click" Content="Cancelar" Width="100" HorizontalAlignment="Right" Background="Red" />
+                    <Button Grid.Column="0" x:Name="SalvarPessoaButton" Content="Salvar" Click="SalvarPessoaButton_Click" Width="100" HorizontalAlignment="Left" Background="GreenYellow"/>
+                    <Button Grid.Column="1" x:Name="CancelarPessoaButton" Click="CancelarPessoa_Click" Content="Cancelar" Width="100" HorizontalAlignment="Right" Background="Red" />
                 </Grid>
             </StackPanel>
 

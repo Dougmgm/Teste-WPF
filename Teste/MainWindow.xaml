@@ -23,7 +23,7 @@
                 </StackPanel>
 
                 <!-- DataGrid Pessoa -->
-                <Grid Grid.Column="1" x:Name="TelaPessoa" Background="AliceBlue" Visibility="Hidden">
+                <Grid Grid.Column="1" x:Name="TelaPessoa" Background="AliceBlue" Visibility="Collapsed">
 
                     <StackPanel Margin="10 10 10 90">
 
@@ -47,6 +47,7 @@
                                 <DataGridTextColumn Header="Nome" Binding="{Binding Nome}" Width="*"/>
                                 <DataGridTextColumn Header="CPF" Binding="{Binding Cpf}" Width="*"/>
                                 <DataGridTextColumn Header="Endereço" Binding="{Binding Endereco}" Width="*"/>
+                                <DataGridHyperlinkColumn Header="Pedidos"/>
                             </DataGrid.Columns>
                         </DataGrid>
                     </StackPanel>
@@ -61,8 +62,8 @@
                         </Grid.ColumnDefinitions>
 
                         <Button Grid.Column = "0" Content="Incluir" x:Name="IncluirPessoa" Click="IncluirPessoa_Click" Background="GreenYellow" Height="20" Width="75" HorizontalAlignment="Left"/>
-                        <Button Grid.Column = "1" Content ="Alterar" x:Name="AlterarPessoa"  Background="SkyBlue" Height="20" Width="75" HorizontalAlignment="Left"/>
-                        <Button Grid.Column = "2" Content ="Salvar" x:Name="SalvarPessoa"  Background="SkyBlue" Height="20" Width="75" HorizontalAlignment="Left"/>
+                        <Button Grid.Column = "1" Content ="Alterar" x:Name="AlterarPessoa" Click="AlterarPessoa_Click"  Background="SkyBlue" Height="20" Width="75" HorizontalAlignment="Left"/>
+                        <Button Grid.Column = "2" Content ="Salvar" x:Name="SalvarPessoa"  Click="SalvarPessoa_Click" Background="SkyBlue" Height="20" Width="75" HorizontalAlignment="Left" Visibility="Collapsed"/>
                         <Button Grid.Column = "3" Content ="Excluir" x:Name="ExcluirPessoa"  Background="LightPink" Height="20" Width="75" HorizontalAlignment="Center"/>
                     </Grid>
 
@@ -106,14 +107,14 @@
                         </Grid.ColumnDefinitions>
 
                         <Button Grid.Column = "0" Content="Incluir" x:Name="IncluirProduto" Click="IncluirProduto_Click" Background="GreenYellow" Height="20" Width="75" HorizontalAlignment="Left"/>
-                        <Button Grid.Column = "1" Content ="Alterar" x:Name="AlterarProduto"  Background="SkyBlue" Height="20" Width="75" HorizontalAlignment="Left"/>
-                        <Button Grid.Column = "2" Content ="Salvar" x:Name="SalvarProduto"  Background="SkyBlue" Height="20" Width="75" HorizontalAlignment="Left"/>
+                        <Button Grid.Column = "1" Content ="Alterar" x:Name="AlterarProduto" Click="AlterarProduto_Click" Background="SkyBlue" Height="20" Width="75" HorizontalAlignment="Left"/>
+                        <Button Grid.Column = "2" Content ="Salvar" x:Name="SalvarProduto"  Click="SalvarProduto_Click" Visibility="Collapsed" Background="SkyBlue" Height="20" Width="75" HorizontalAlignment="Left"/>
                         <Button Grid.Column = "3" Content ="Excluir" x:Name="ExcluirProduto"  Background="LightPink" Height="20" Width="75" HorizontalAlignment="Center"/>
                     </Grid>
                 </Grid>
 
                 <!-- Tela Pedidos -->
-                <Grid Grid.Column="1" x:Name="TelaPedido" Background="AliceBlue" Visibility="Visible">
+                <Grid Grid.Column="1" x:Name="TelaPedido" Background="AliceBlue" Visibility="Collapsed">
 
                     <StackPanel Margin="10 10 10 90">
 
@@ -148,14 +149,16 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width=".5*"/>
                             <ColumnDefinition Width=".5*"/>
+                            <ColumnDefinition Width=".5*"/>
                             <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
 
-                        <Button Grid.Column = "0" Content="Incluir" x:Name="IncluirPedido" Click="IncluirProduto_Click" Background="GreenYellow" Height="20" Width="75" HorizontalAlignment="Left"/>
-                        <Button Grid.Column = "1" Content ="Expandir" x:Name="AlterarPedido"  Background="SkyBlue" Height="20" Width="75" HorizontalAlignment="Left"/>
-                        <Button Grid.Column = "2" Content ="Alterar" x:Name="SalvarPedido"  Background="SkyBlue" Height="20" Width="75" HorizontalAlignment="Left"/>
-                        <Button Grid.Column = "3" Content ="Excluir" x:Name="ExcluirPedido"  Background="LightPink" Height="20" Width="75" HorizontalAlignment="Center"/>
+                        <Button Grid.Column = "0" Content="Incluir" x:Name="IncluirPedido" Click="IncluirPedido_Click" Background="GreenYellow" Height="20" Width="75" HorizontalAlignment="Left"/>
+                        <Button Grid.Column = "1" Content ="Expandir" x:Name="ExpandirPedido"  Background="SkyBlue" Height="20" Width="75" HorizontalAlignment="Left"/>
+                        <Button Grid.Column = "2" Content ="Alterar" x:Name="AlterarPedido" Click="AlterarPedido_Click" Background="SkyBlue" Height="20" Width="75" HorizontalAlignment="Left"/>
+                        <Button Grid.Column = "3" Content ="Salvar" x:Name="SalvarPedido" Click="SalvarPedido_Click" Visibility="Collapsed" Background="SkyBlue" Height="20" Width="75" HorizontalAlignment="Left"/>
+                        <Button Grid.Column = "4" Content ="Excluir" x:Name="ExcluirPedido"  Background="LightPink" Height="20" Width="75" HorizontalAlignment="Center"/>
                     </Grid>
                 </Grid>
 

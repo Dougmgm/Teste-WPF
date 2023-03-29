@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Teste"
         mc:Ignorable="d"
-        Title="CadastrarProduto" Height="450" Width="800">
+        Title="Cadastrar Produto" Height="450" Width="800">
     <Grid>
         <!-- Tela Produto -->
         <Grid Grid.Column="1" Visibility="Visible" Margin="20">
