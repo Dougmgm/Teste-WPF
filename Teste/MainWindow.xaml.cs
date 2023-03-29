@@ -26,36 +26,15 @@ namespace Teste
         {
 
             InitializeComponent();
-
-            DataContext = this;
-
-            CadastroPessoa cadastroPessoa = new CadastroPessoa();
-            cadastroPessoa.PessoaCadastradaEvent += CadastroPessoa_PessoaCadastradaEvent;
-            cadastroPessoa.Show();
-
-
-            Pessoa teste = new Pessoa();
-
-            teste.IdPessoa = "123";
-            teste.Nome = "Teste da Silva";
-            teste.Cpf = "000.123.456-98";
-            teste.Endereco = "rua do teste testado, 659";
-
-            DataGridPessoa.Items.Add(teste);
-
-            Produtos teste2 = new Produtos();
-            teste2.Codigo = 5;
-            teste2.IdProduto = 123;
-            teste2.NomeProduto = "Sapato";
-            teste2.Valor = 1963.55;
-
-            DataGridProduto.Items.Add(teste2);
+            
         }
 
         private void CadastroPessoa_PessoaCadastradaEvent(object sender, CadastroPessoa.PessoaCadastradaEventArgs e)
         {
-            Pessoas.Add(e.Pessoa);
+            DataGridPessoa.Items.Add(e.PessoaCadastrada);
         }
+
+        #region Telas
 
         private void PessoaButton_Click(object sender, RoutedEventArgs e)
         {
@@ -79,25 +58,19 @@ namespace Teste
             TelaProduto.Visibility = Visibility.Hidden;
         }
 
+        #endregion
+
+        #region Botões
+
+
+        // BOTÕES PESSOA
         private void IncluirPessoa_Click(object sender, RoutedEventArgs e)
         {
             CadastroPessoa cadastroPessoa = new CadastroPessoa();
+            cadastroPessoa.PessoaCadastradaEvent += CadastroPessoa_PessoaCadastradaEvent;
             cadastroPessoa.Show();
         }
 
-        private void IncluirProduto_Click(object sender, RoutedEventArgs e)
-        {
-            CadastrarProduto cadastrarProduto = new CadastrarProduto();
-            cadastrarProduto.Show();
-        }
-
-        private void IncluirPedido_Click(object sender, RoutedEventArgs e)
-        {
-            CadastrarPedido cadastrarPedido = new CadastrarPedido();
-            cadastrarPedido.Show();
-        }
-
-        // BOTÕES PESSOA
         private void AlterarPessoa_Click(object sender, RoutedEventArgs e)
         {
             this.SalvarPessoa.Visibility = Visibility.Visible;
@@ -109,6 +82,11 @@ namespace Teste
         }
 
         // BOTÕES PRODUTOS
+        private void IncluirProduto_Click(object sender, RoutedEventArgs e)
+        {
+            CadastrarProduto cadastrarProduto = new CadastrarProduto();
+            cadastrarProduto.Show();
+        }
 
         private void AlterarProduto_Click(object sender, RoutedEventArgs e)
         {
@@ -121,6 +99,12 @@ namespace Teste
         }
 
         // BOTÕES PEDIDOS
+        private void IncluirPedido_Click(object sender, RoutedEventArgs e)
+        {
+            CadastrarPedido cadastrarPedido = new CadastrarPedido();
+            cadastrarPedido.Show();
+        }
+
         private void AlterarPedido_Click(object sender, RoutedEventArgs e)
         {
             this.SalvarPedido.Visibility = Visibility.Visible;
@@ -130,5 +114,7 @@ namespace Teste
         {
             this.SalvarPedido.Visibility = Visibility.Collapsed;
         }
+
+        #endregion
     }
 }
