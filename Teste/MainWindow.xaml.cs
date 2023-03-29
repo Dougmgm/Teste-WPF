@@ -20,16 +20,19 @@ namespace Teste
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<Pessoa> pessoas;
+        public List<Pessoa> Pessoas { get; set; } = new List<Pessoa>();
 
         public MainWindow()
         {
 
-            pessoas = new List<Pessoa>();
-
-            pessoas.Add(new Pessoa());
-
             InitializeComponent();
+
+            DataContext = this;
+
+            CadastroPessoa cadastroPessoa = new CadastroPessoa();
+            cadastroPessoa.PessoaCadastradaEvent += CadastroPessoa_PessoaCadastradaEvent;
+            cadastroPessoa.Show();
+
 
             Pessoa teste = new Pessoa();
 
@@ -38,7 +41,7 @@ namespace Teste
             teste.Cpf = "000.123.456-98";
             teste.Endereco = "rua do teste testado, 659";
 
-            DataGridPessoa.Items.Add(pessoas);
+            DataGridPessoa.Items.Add(teste);
 
             Produtos teste2 = new Produtos();
             teste2.Codigo = 5;
@@ -47,6 +50,11 @@ namespace Teste
             teste2.Valor = 1963.55;
 
             DataGridProduto.Items.Add(teste2);
+        }
+
+        private void CadastroPessoa_PessoaCadastradaEvent(object sender, CadastroPessoa.PessoaCadastradaEventArgs e)
+        {
+            Pessoas.Add(e.Pessoa);
         }
 
         private void PessoaButton_Click(object sender, RoutedEventArgs e)
