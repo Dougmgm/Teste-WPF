@@ -18,12 +18,12 @@
 
                     <StackPanel Grid.Column="1" Margin="0 0 20 0">
                         <TextBlock Text="ID" FontWeight="Bold" Margin="0 20 0 0" />
-                        <TextBox IsReadOnly="True" Background="#eee" Padding="2" Margin="0 0 0 2">999</TextBox>
+                        <TextBox x:Name="IdProdutoTB" IsReadOnly="True" Background="#eee" Padding="2" Margin="0 0 0 2">999</TextBox>
                     </StackPanel>
 
                     <StackPanel Grid.Column="0">
                         <TextBlock Text="NOME DO PRODUTO" FontWeight="Bold" Margin="0 20 0 0" />
-                        <TextBox  Padding="2" Margin="0, 0, 15, 2" >teste</TextBox>
+                        <TextBox x:Name="NomeProdutoTB" Padding="2" Margin="0, 0, 15, 2" >teste</TextBox>
                     </StackPanel>
 
                 </Grid>
@@ -36,13 +36,13 @@
 
                     <StackPanel Grid.Column="0" Margin="0 0 20 0">
                         <TextBlock Text="CODIGO" FontWeight="Bold" Margin="0 20 0 0" />
-                        <TextBox  Padding="2" Margin="0 0 0 2">999</TextBox>
+                        <TextBox x:Name="CodigoProdutoTB" Padding="2" Margin="0 0 0 2">999</TextBox>
 
                     </StackPanel>
 
                     <StackPanel Grid.Column="2" >
                         <TextBlock Text="VALOR" FontWeight="Bold" Margin="0 20 0 0" />
-                        <TextBox Padding="2"  Margin="0, 0, 0, 2" 
+                        <TextBox x:Name="ValorProdutoTB" Padding="2"  Margin="0, 0, 0, 2" 
                                  Text="9.000.999,99" Width="80" HorizontalAlignment="Left"/>
                     </StackPanel>
                 </Grid>
@@ -54,7 +54,7 @@
                         <ColumnDefinition Width="4*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Button Grid.Column="0" x:Name="IncluirProduto" Content="Salvar" Width="100" HorizontalAlignment="Left" Background="GreenYellow"/>
+                    <Button Grid.Column="0" x:Name="IncluirProduto" Click="IncluirProduto_Click" Content="Salvar" Width="100" HorizontalAlignment="Left" Background="GreenYellow"/>
                     <Button Grid.Column="1" x:Name="CancelarProduto" Click="CancelarProduto_Click" Content="Cancelar" Width="100" HorizontalAlignment="Right" Margin="0 0 0 0" Background="Red" />
                 </Grid>
 

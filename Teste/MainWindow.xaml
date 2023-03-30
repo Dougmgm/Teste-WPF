@@ -70,7 +70,7 @@
                 </Grid>
 
                 <!-- DataGrid Produto -->
-                <Grid Grid.Column="1" x:Name="TelaProduto" Background="AliceBlue" Visibility="Collapsed">
+                <Grid Grid.Column="1" x:Name="TelaProduto" Background="AliceBlue" Visibility="Visible">
 
                     <StackPanel Margin="10 10 10 90">
 
@@ -89,7 +89,7 @@
 
                         <DataGrid x:Name="DataGridProduto" Height="324" >
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="ID" Binding="{Binding IdProduto}" Width="*" />
+                                <DataGridTextColumn Header="Id" Binding="{Binding IdProduto}" Width="*" />
                                 <DataGridTextColumn Header="Nome" Binding="{Binding NomeProduto}" Width="*"/>
                                 <DataGridTextColumn Header="Codigo" Binding="{Binding Codigo}" Width="*"/>
                                 <DataGridTextColumn Header="Valor" Binding="{Binding Valor}" Width="*"/>

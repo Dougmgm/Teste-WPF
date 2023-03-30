@@ -26,14 +26,14 @@ namespace Teste
 
         private void SalvarPessoaButton_Click(object sender, RoutedEventArgs e)
         {
-            Pessoa pessoa2 = new Pessoa();
+            Pessoa pessoa = new Pessoa();
 
-            pessoa2.IdPessoa = IdPessoaTB.Text;
-            pessoa2.Nome = NomePessoaTB.Text;
-            pessoa2.Cpf = CpfPessoaTB.Text;
-            pessoa2.Endereco = EnderecoPessoaTB.Text;
+            pessoa.IdPessoa = IdPessoaTB.Text;
+            pessoa.Nome = NomePessoaTB.Text;
+            pessoa.Cpf = CpfPessoaTB.Text;
+            pessoa.Endereco = EnderecoPessoaTB.Text;
 
-            PessoaCadastradaEvent?.Invoke(this, new PessoaCadastradaEventArgs { PessoaCadastrada = pessoa2 });
+            PessoaCadastradaEvent?.Invoke(this, new PessoaCadastradaEventArgs { PessoaCadastrada = pessoa });
 
             this.Close(); // fecha a janela de cadastro de pessoa
         }

@@ -21,6 +21,7 @@ namespace Teste
     public partial class MainWindow : Window
     {
         public List<Pessoa> Pessoas { get; set; } = new List<Pessoa>();
+        public List<Produtos> Produtos { get; set; } = new List<Produtos>();
 
         public MainWindow()
         {
@@ -32,6 +33,11 @@ namespace Teste
         private void CadastroPessoa_PessoaCadastradaEvent(object sender, CadastroPessoa.PessoaCadastradaEventArgs e)
         {
             DataGridPessoa.Items.Add(e.PessoaCadastrada);
+        }
+
+        private void CadastrarProduto_ProdutosCadastradosEvent(object sender, CadastrarProduto.ProdutosCadastradosEventArgs e)
+        {
+            DataGridProduto.Items.Add(e.ProdutosCadastrados);
         }
 
         #region Telas
@@ -85,7 +91,9 @@ namespace Teste
         private void IncluirProduto_Click(object sender, RoutedEventArgs e)
         {
             CadastrarProduto cadastrarProduto = new CadastrarProduto();
+            cadastrarProduto.ProdutosCadastradosEvent += CadastrarProduto_ProdutosCadastradosEvent;
             cadastrarProduto.Show();
+
         }
 
         private void AlterarProduto_Click(object sender, RoutedEventArgs e)
