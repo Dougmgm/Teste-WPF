@@ -28,7 +28,7 @@ namespace Teste
         {
             Pessoa pessoa = new Pessoa();
 
-            pessoa.IdPessoa = IdPessoaTB.Text;
+            pessoa.IdPessoa = Convert.ToInt32(IdPessoaTB.Text);
             pessoa.Nome = NomePessoaTB.Text;
             pessoa.Cpf = CpfPessoaTB.Text;
             pessoa.Endereco = EnderecoPessoaTB.Text;
@@ -37,7 +37,5 @@ namespace Teste
 
             this.Close(); // fecha a janela de cadastro de pessoa
         }
-
-
     }
 }

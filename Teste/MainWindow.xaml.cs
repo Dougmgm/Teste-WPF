@@ -20,6 +20,7 @@ namespace Teste
     /// </summary>
     public partial class MainWindow : Window
     {
+        // Declaração da lista de Pessoas
         public List<Pessoa> Pessoas { get; set; } = new List<Pessoa>();
         public List<Produtos> Produtos { get; set; } = new List<Produtos>();
 
@@ -27,12 +28,32 @@ namespace Teste
         {
 
             InitializeComponent();
+
+            // Define a origem dos dados do DataGridPessoa como a lista de Pessoas
+            DataGridPessoa.ItemsSource = Pessoas;
             
         }
 
+        // Evento disparado quando uma pessoa é cadastrada
         private void CadastroPessoa_PessoaCadastradaEvent(object sender, CadastroPessoa.PessoaCadastradaEventArgs e)
         {
-            DataGridPessoa.Items.Add(e.PessoaCadastrada);
+            if (Pessoas.Count == 0)
+            {
+                // Se não houver pessoas cadastradas, o IdPessoa é 1
+                e.PessoaCadastrada.IdPessoa = 1;
+            }
+            else
+            {
+                // Caso contrário, o IdPessoa é o último id cadastrado + 1
+                int ultimoId = Pessoas.Max(p => p.IdPessoa);
+                e.PessoaCadastrada.IdPessoa = ultimoId + 1;
+            }
+
+            // Adiciona a pessoa cadastrada na lista de Pessoas
+            Pessoas.Add(e.PessoaCadastrada);
+
+            // Atualiza o DataGridProduto para mostrar o novo produto cadastrado
+            DataGridPessoa.Items.Refresh();
         }
 
         private void CadastrarProduto_ProdutosCadastradosEvent(object sender, CadastrarProduto.ProdutosCadastradosEventArgs e)
@@ -68,11 +89,14 @@ namespace Teste
 
         #region Botões
 
+        // Propriedade que retorna o número de pessoas cadastradas
+        public int NumeroPessoasCadastradas => Pessoas.Count;
 
         // BOTÕES PESSOA
         private void IncluirPessoa_Click(object sender, RoutedEventArgs e)
         {
             CadastroPessoa cadastroPessoa = new CadastroPessoa();
+            cadastroPessoa.IdPessoaTB.Text = (NumeroPessoasCadastradas + 1).ToString();
             cadastroPessoa.PessoaCadastradaEvent += CadastroPessoa_PessoaCadastradaEvent;
             cadastroPessoa.Show();
         }
