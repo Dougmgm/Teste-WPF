@@ -22,6 +22,8 @@ namespace Teste
     {
         // Declaração da lista de Pessoas
         public List<Pessoa> Pessoas { get; set; } = new List<Pessoa>();
+
+        // Declaração da lista de Produtos
         public List<Produtos> Produtos { get; set; } = new List<Produtos>();
 
         public MainWindow()
@@ -115,7 +117,10 @@ namespace Teste
         private void IncluirProduto_Click(object sender, RoutedEventArgs e)
         {
             CadastrarProduto cadastrarProduto = new CadastrarProduto();
+
+            // Registra o evento ProdutosCadastradosEvent da janela CadastrarProduto
             cadastrarProduto.ProdutosCadastradosEvent += CadastrarProduto_ProdutosCadastradosEvent;
+
             cadastrarProduto.Show();
 
         }

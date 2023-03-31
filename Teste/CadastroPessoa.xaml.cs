@@ -35,7 +35,8 @@ namespace Teste
 
             PessoaCadastradaEvent?.Invoke(this, new PessoaCadastradaEventArgs { PessoaCadastrada = pessoa });
 
-            this.Close(); // fecha a janela de cadastro de pessoa
+            // fecha a janela de cadastro de pessoa
+            this.Close(); 
         }
     }
 }
