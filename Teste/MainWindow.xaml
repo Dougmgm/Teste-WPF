@@ -23,7 +23,7 @@
                 </StackPanel>
 
                 <!-- DataGrid Pessoa -->
-                <Grid Grid.Column="1" x:Name="TelaPessoa" Background="AliceBlue" Visibility="Collapsed">
+                <Grid Grid.Column="1" x:Name="TelaPessoa" Background="AliceBlue" Visibility="Visible">
 
                     <StackPanel Margin="10 10 10 90">
 
@@ -43,7 +43,7 @@
 
                         <DataGrid x:Name="DataGridPessoa" Height="324" AutoGenerateColumns="False" CanUserAddRows="False">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="ID" Binding="{Binding IdPessoa}" Width="*" />
+                                <DataGridTextColumn Header="ID" Binding="{Binding IdPessoa}" Width="*" IsReadOnly="True" />
                                 <DataGridTextColumn Header="Nome" Binding="{Binding Nome}" Width="*"/>
                                 <DataGridTextColumn Header="CPF" Binding="{Binding Cpf}" Width="*"/>
                                 <DataGridTextColumn Header="Endereço" Binding="{Binding Endereco}" Width="*"/>
@@ -57,20 +57,22 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width=".5*"/>
                             <ColumnDefinition Width=".5*"/>
+                            <ColumnDefinition Width=".5*"/>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
-                        <Button Grid.Column = "0" Content="Incluir" x:Name="IncluirPessoa" Click="IncluirPessoa_Click" Background="GreenYellow" Height="20" Width="75" HorizontalAlignment="Left"/>
-                        <Button Grid.Column = "1" Content ="Alterar" x:Name="AlterarPessoa" Click="AlterarPessoa_Click"  Background="SkyBlue" Height="20" Width="75" HorizontalAlignment="Left"/>
-                        <Button Grid.Column = "2" Content ="Salvar" x:Name="SalvarPessoa"  Click="SalvarPessoa_Click" Background="SkyBlue" Height="20" Width="75" HorizontalAlignment="Left" Visibility="Collapsed"/>
-                        <Button Grid.Column = "3" Content ="Excluir" x:Name="ExcluirPessoa"  Background="LightPink" Height="20" Width="75" HorizontalAlignment="Center"/>
+                        <Button Grid.Column = "0" Content="Pedir" x:Name="PedidoPessoa" Click="PedidoPessoa_Click" Background="GreenYellow" Height="20" Width="75" HorizontalAlignment="Left"/>
+                        <Button Grid.Column = "1" Content ="Incluir" x:Name="IncluirPessoa" Click="IncluirPessoa_Click"  Background="SkyBlue" Height="20" Width="75" HorizontalAlignment="Left"/>
+                        <Button Grid.Column = "2" Content ="Alterar" x:Name="AlterarPessoa"  Click="AlterarPessoa_Click" Background="SkyBlue" Height="20" Width="75" HorizontalAlignment="Left"/>
+                        <Button Grid.Column = "3" Content ="Salvar" x:Name="SalvarPessoa"  Click="SalvarPessoa_Click" Background="SkyBlue" Height="20" Width="75" HorizontalAlignment="Left" Visibility="Collapsed"/>
+                        <Button Grid.Column = "4" Content ="Excluir" x:Name="ExcluirPessoa"  Background="LightPink" Height="20" Width="75" HorizontalAlignment="Center"/>
                     </Grid>
 
                 </Grid>
 
                 <!-- DataGrid Produto -->
-                <Grid Grid.Column="1" x:Name="TelaProduto" Background="AliceBlue" Visibility="Visible">
+                <Grid Grid.Column="1" x:Name="TelaProduto" Background="AliceBlue" Visibility="Collapsed">
 
                     <StackPanel Margin="10 10 10 90">
 
@@ -89,10 +91,10 @@
 
                         <DataGrid x:Name="DataGridProduto" Height="324" >
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="Id" Binding="{Binding IdProduto}" Width="*" />
+                                <DataGridTextColumn Header="Id" Binding="{Binding IdProduto}" Width="*" IsReadOnly="True"/>
                                 <DataGridTextColumn Header="Nome" Binding="{Binding NomeProduto}" Width="*"/>
                                 <DataGridTextColumn Header="Codigo" Binding="{Binding Codigo}" Width="*"/>
-                                <DataGridTextColumn Header="Valor" Binding="{Binding Valor}" Width="*"/>
+                                <DataGridTextColumn Header="Valor" Binding="{Binding Preco}" Width="*"/>
                             </DataGrid.Columns>
                         </DataGrid>
                     </StackPanel>

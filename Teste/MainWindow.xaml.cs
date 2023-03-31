@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,10 +22,10 @@ namespace Teste
     public partial class MainWindow : Window
     {
         // Declaração da lista de Pessoas
-        public List<Pessoa> Pessoas { get; set; } = new List<Pessoa>();
+        public ObservableCollection<Pessoa> Pessoas { get; set; } = new ObservableCollection<Pessoa>();
 
         // Declaração da lista de Produtos
-        public List<Produtos> Produtos { get; set; } = new List<Produtos>();
+        public ObservableCollection<Produtos> Produtos { get; set; } = new ObservableCollection<Produtos>();
 
         public MainWindow()
         {
@@ -33,8 +34,11 @@ namespace Teste
 
             // Define a origem dos dados do DataGridPessoa como a lista de Pessoas
             DataGridPessoa.ItemsSource = Pessoas;
+            DataGridProduto.ItemsSource = Produtos;
             
         }
+
+        #region Gerenciador de cadastros
 
         // Evento disparado quando uma pessoa é cadastrada
         private void CadastroPessoa_PessoaCadastradaEvent(object sender, CadastroPessoa.PessoaCadastradaEventArgs e)
@@ -53,15 +57,27 @@ namespace Teste
 
             // Adiciona a pessoa cadastrada na lista de Pessoas
             Pessoas.Add(e.PessoaCadastrada);
-
-            // Atualiza o DataGridProduto para mostrar o novo produto cadastrado
-            DataGridPessoa.Items.Refresh();
         }
 
         private void CadastrarProduto_ProdutosCadastradosEvent(object sender, CadastrarProduto.ProdutosCadastradosEventArgs e)
         {
-            DataGridProduto.Items.Add(e.ProdutosCadastrados);
+            if (Produtos.Count == 0)
+            {
+                // Se não houver pessoas cadastradas, o IdProduto é 1
+                e.ProdutosCadastrados.IdProduto = 1;
+            }
+            else
+            {
+                // Caso contrário, o IdProduto é o último id cadastrado + 1
+                int ultimoId = Produtos.Max(p => p.IdProduto);
+                e.ProdutosCadastrados.IdProduto = ultimoId + 1;
+            }
+
+            // Adiciona a pessoa cadastrada na lista de Produtos
+            Produtos.Add(e.ProdutosCadastrados);
         }
+
+        #endregion
 
         #region Telas
 
@@ -91,16 +107,20 @@ namespace Teste
 
         #region Botões
 
-        // Propriedade que retorna o número de pessoas cadastradas
-        public int NumeroPessoasCadastradas => Pessoas.Count;
+        #region Botões Pessoa
 
-        // BOTÕES PESSOA
         private void IncluirPessoa_Click(object sender, RoutedEventArgs e)
         {
             CadastroPessoa cadastroPessoa = new CadastroPessoa();
-            cadastroPessoa.IdPessoaTB.Text = (NumeroPessoasCadastradas + 1).ToString();
+            cadastroPessoa.IdPessoaTB.Text = (Pessoas.Count + 1).ToString();
             cadastroPessoa.PessoaCadastradaEvent += CadastroPessoa_PessoaCadastradaEvent;
             cadastroPessoa.Show();
+        }
+
+        private void PedidoPessoa_Click(object sender, RoutedEventArgs e)
+        {
+            CadastrarPedido cadastrarPedido = new CadastrarPedido();
+            cadastrarPedido.Show();
         }
 
         private void AlterarPessoa_Click(object sender, RoutedEventArgs e)
@@ -113,14 +133,17 @@ namespace Teste
             this.SalvarPessoa.Visibility = Visibility.Collapsed;
         }
 
+        #endregion
+
+        #region Botões Produtos
         // BOTÕES PRODUTOS
         private void IncluirProduto_Click(object sender, RoutedEventArgs e)
         {
             CadastrarProduto cadastrarProduto = new CadastrarProduto();
+            cadastrarProduto.IdProdutoTB.Text = (Produtos.Count + 1).ToString();
 
             // Registra o evento ProdutosCadastradosEvent da janela CadastrarProduto
             cadastrarProduto.ProdutosCadastradosEvent += CadastrarProduto_ProdutosCadastradosEvent;
-
             cadastrarProduto.Show();
 
         }
@@ -135,11 +158,14 @@ namespace Teste
             this.SalvarProduto.Visibility = Visibility.Collapsed;
         }
 
+        #endregion
+
+        #region Botões Pedidos
+
         // BOTÕES PEDIDOS
         private void IncluirPedido_Click(object sender, RoutedEventArgs e)
         {
-            CadastrarPedido cadastrarPedido = new CadastrarPedido();
-            cadastrarPedido.Show();
+            //PARA DEPOIS
         }
 
         private void AlterarPedido_Click(object sender, RoutedEventArgs e)
@@ -153,5 +179,8 @@ namespace Teste
         }
 
         #endregion
+
+        #endregion
+
     }
 }

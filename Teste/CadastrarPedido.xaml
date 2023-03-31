@@ -24,7 +24,7 @@
 
                     <StackPanel Grid.Column="0">
                         <TextBlock Text="NOME" FontWeight="Bold" Margin="0 20 0 0" />
-                        <TextBox IsReadOnly="True" Background="#eee" x:Name="NomePessoaTB" Padding="2" Margin="0, 0, 15, 2" Text="DOUGLAS MENCHON GOES MARTINS"/>
+                        <TextBox x:Name="NomePessoaPedidoTB" IsReadOnly="True" Background="#eee" Padding="2" Margin="0, 0, 15, 2" Text="DOUGLAS MENCHON GOES MARTINS"/>
                     </StackPanel>
 
                 </Grid>
@@ -41,7 +41,7 @@
                     
                     <StackPanel Grid.Column="0">
                         <TextBlock Text="PRODUTOS" FontWeight="Bold" Margin="0 20 0 0" />
-                        <ComboBox  Padding="2" Margin="0, 0, 15, 2" Text="DOUGLAS MENCHON GOES MARTINS">
+                        <ComboBox x:Name="ListaProdutosCB" Padding="2" Margin="0, 0, 15, 2" Text="DOUGLAS MENCHON GOES MARTINS">
                             <ComboBoxItem Content="Sapato"/>
                             <ComboBoxItem Content="Camisa"/>
                             <ComboBoxItem Content="Computador"/>
@@ -52,32 +52,32 @@
 
                     <StackPanel Grid.Column="1" Margin="0 0 20 0">
                         <TextBlock Text="QUANTIDADE" FontWeight="Bold" Margin="0 20 0 0" />
-                        <TextBox Padding="2" Margin="0 0 0 2" Text="999"/>
+                        <TextBox x:Name="QuantidadeTB" Padding="2" Margin="0 0 0 2" Text="999"/>
                     </StackPanel>
 
                     <StackPanel Grid.Column="2" Margin="0 0 20 0">
                         <TextBlock Text="PREÇO" FontWeight="Bold" Margin="0 20 0 0" />
-                        <TextBox IsReadOnly="True" Background="#eee" Padding="2" Margin="0 0 0 2" Text="999"/>
+                        <TextBox x:Name="PrecoTB" IsReadOnly="True" Background="#eee" Padding="2" Margin="0 0 0 2" Text="999"/>
                     </StackPanel>
 
                     <StackPanel Grid.Column="3" Margin="0 0 20 0">
                         <TextBlock Text="SUBTOTAL" FontWeight="Bold" Margin="0 20 0 0" />
-                        <TextBox IsReadOnly="True" FontWeight="SemiBold" Background="#eee" Padding="2" Margin="0 0 0 2" Text="999"/>
+                        <TextBox x:Name="SubTotalTB" IsReadOnly="True" FontWeight="SemiBold" Background="#eee" Padding="2" Margin="0 0 0 2" Text="999"/>
                     </StackPanel>
 
-                    <Button Grid.Column="4" Height="30" Width="30" Margin="0 0 0 2" VerticalAlignment="Bottom">
+                    <Button x:Name="IncluirProdutoPedido" Click="IncluirProdutoPedido_Click"  Grid.Column="4" Height="30" Width="30" Margin="0 0 0 2" VerticalAlignment="Bottom">
                         <Image Source="Images/SetaBaixo.jpg"/>
                     </Button>
 
                 </Grid>
 
                 <Grid>
-                    <DataGrid x:Name="DataGridPedido" Height="150"  >
+                    <DataGrid x:Name="DataGridPedido" Height="150" AutoGenerateColumns="False" CanUserAddRows="False" >
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Produto" Binding="{Binding IdProduto}" Width="*" />
-                            <DataGridTextColumn Header="Preço" Binding="{Binding NomeProduto}" Width="*"/>
-                            <DataGridTextColumn Header="Quantidade" Binding="{Binding Codigo}" Width="*"/>
-                            <DataGridTextColumn Header="Sub Total" Binding="{Binding Valor}" Width="*"/>
+                            <DataGridTextColumn Header="Produto" Binding="{Binding NomeProduto}" Width="*" />
+                            <DataGridTextColumn Header="Preço" Binding="{Binding Preco}" Width="*"/>
+                            <DataGridTextColumn Header="Quantidade" Binding="{Binding Quantidade}" Width="*"/>
+                            <DataGridTextColumn Header="Sub Total" Binding="{Binding SubTotal}" Width="*"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
@@ -88,7 +88,7 @@
                         <ColumnDefinition Width="120"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 5 0" Text="VALOR TOTAL:" FontWeight="Bold"/>
-                    <TextBlock Grid.Column="1" Text="R$ 456123,99" VerticalAlignment="Center" FontWeight="Bold" Background="#eee"/>
+                    <TextBlock x:Name="ValorTotalTB" Grid.Column="1"  VerticalAlignment="Center" FontWeight="Bold" Background="#eee"/>
                 </Grid>
 
                 <!-- Botões -->
@@ -101,7 +101,7 @@
 
                     <StackPanel Grid.Column="0">
                         <TextBlock Text="FORMA DE PAGAMENTO" FontWeight="Bold"/>
-                        <ComboBox>
+                        <ComboBox x:Name="PagamentoCB">
                             <ComboBoxItem Content="Dinheiro"/>
                             <ComboBoxItem Content="Crédito"/>
                             <ComboBoxItem Content="Débito"/>

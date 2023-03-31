@@ -42,11 +42,12 @@ namespace Teste
             produto.IdProduto = Convert.ToInt32(IdProdutoTB.Text);
             produto.NomeProduto = NomeProdutoTB.Text;
             produto.Codigo = Convert.ToInt32(CodigoProdutoTB.Text);
-            produto.Valor = Convert.ToDouble(ValorProdutoTB.Text);
+            produto.Preco = Convert.ToDouble(ValorProdutoTB.Text);
 
             ProdutosCadastradosEvent?.Invoke(this, new ProdutosCadastradosEventArgs { ProdutosCadastrados = produto });
 
-            this.Close(); // fecha a janela de cadastro de pessoa
+            // fecha a janela de cadastro de pessoa
+            this.Close(); 
         }
     }
 }

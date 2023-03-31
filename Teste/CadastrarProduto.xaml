@@ -18,7 +18,7 @@
 
                     <StackPanel Grid.Column="1" Margin="0 0 20 0">
                         <TextBlock Text="ID" FontWeight="Bold" Margin="0 20 0 0" />
-                        <TextBox x:Name="IdProdutoTB" IsReadOnly="True" Background="#eee" Padding="2" Margin="0 0 0 2">999</TextBox>
+                        <TextBox x:Name="IdProdutoTB" IsReadOnly="True" Background="#eee" Padding="2" Margin="0 0 0 2"/>
                     </StackPanel>
 
                     <StackPanel Grid.Column="0">
