@@ -22,7 +22,6 @@ namespace Teste
     {
         public ObservableCollection<Pedidos> Pedidos { get; set; } = new ObservableCollection<Pedidos>();
 
-
         public CadastrarPedido()
         {
             InitializeComponent();
@@ -41,18 +40,20 @@ namespace Teste
 
         private void IncluirProdutoPedido_Click(object sender, RoutedEventArgs e)
         {
-            Pedidos pedidos = new Pedidos();
-            Produtos produtoSelecionado = new Produtos();
+            // Cria um novo objeto Produtos correspondente ao produto selecionado
+            Produtos produtoSelecionado = new Produtos
+            {
+                NomeProduto = ListaProdutosCB.Text,
+                Preco = double.Parse(PrecoTB.Text)
+            };
 
-            produtoSelecionado.NomeProduto = ListaProdutosCB.Text;
-            produtoSelecionado.Preco = double.Parse(PrecoTB.Text);
+            // Cria um novo objeto Pedidos com o nome do produto, o objeto Produtos correspondente e a quantidade escolhida
+            Pedidos pedidos = new Pedidos(produtoSelecionado.NomeProduto, produtoSelecionado, int.Parse(QuantidadeTB.Text));
 
-            pedidos.Produto = produtoSelecionado;
-            pedidos.Quantidade = int.Parse(QuantidadeTB.Text);
-            pedidos.SubTotal = pedidos.Quantidade * produtoSelecionado.Preco;
-
+            // Adiciona o novo objeto Pedidos à lista Pedidos
             Pedidos.Add(pedidos);
 
+            // Calcula o valor total dos itens do pedido
             double valorTotal = Pedidos.Sum(p => p.SubTotal);
 
             ValorTotalTB.Text = "R$ " + valorTotal.ToString();

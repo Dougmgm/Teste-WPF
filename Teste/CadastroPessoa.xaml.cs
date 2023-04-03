@@ -26,12 +26,13 @@ namespace Teste
 
         private void SalvarPessoaButton_Click(object sender, RoutedEventArgs e)
         {
-            Pessoa pessoa = new Pessoa();
-
-            pessoa.IdPessoa = Convert.ToInt32(IdPessoaTB.Text);
-            pessoa.Nome = NomePessoaTB.Text;
-            pessoa.Cpf = CpfPessoaTB.Text;
-            pessoa.Endereco = EnderecoPessoaTB.Text;
+            Pessoa pessoa = new Pessoa
+            {
+                IdPessoa = Convert.ToInt32(IdPessoaTB.Text),
+                Nome = NomePessoaTB.Text,
+                Cpf = CpfPessoaTB.Text,
+                Endereco = EnderecoPessoaTB.Text
+            };
 
             PessoaCadastradaEvent?.Invoke(this, new PessoaCadastradaEventArgs { PessoaCadastrada = pessoa });
 
