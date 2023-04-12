@@ -197,8 +197,37 @@ namespace Teste
 
 
         #region XML
-        
+
+        private void ExportarXmlPessoa(string fileName)
+        {
+            var pessoasXml = DataGridPessoa.ItemsSource as List<Pessoa>;
+
+            if (Pessoas == null)
+            {
+                return;
+            }
+
+            var xml = new XElement("Pessoa",
+                //new XElement("IdPessoaLista", IdPessoaLista),
+                from p in Pessoas
+                select new XElement("Pessoa",
+                    new XElement("IdPessoa", p.IdPessoa),
+                    new XElement("Nome", p.Nome),
+                    new XElement("Cpf", p.Cpf),
+                    new XElement("Endereco", p.Endereco)
+                )
+            );
+            xml.Save(fileName);
+        }
+
 
         #endregion
+
+        //AddingNewItem para enviar no XML sempre que adicionar alguem
+
+        private void DataGridPessoa_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ExportarXmlPessoa("C:\\ListaPessoa.xml");
+        }
     }
 }

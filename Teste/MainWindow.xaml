@@ -41,7 +41,7 @@
                         </Grid>
 
 
-                        <DataGrid x:Name="DataGridPessoa" Height="324" AutoGenerateColumns="False" CanUserAddRows="False">
+                        <DataGrid x:Name="DataGridPessoa" Height="324" AutoGenerateColumns="False" CanUserAddRows="False" SelectionChanged="DataGridPessoa_SelectionChanged">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="ID" Width="*" IsReadOnly="True"
                                                     Binding="{Binding IdPessoa}"  />
