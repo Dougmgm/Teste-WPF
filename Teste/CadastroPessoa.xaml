@@ -24,7 +24,7 @@
 
                     <StackPanel Grid.Column="0">
                         <TextBlock Text="NOME" FontWeight="Bold" Margin="0 20 0 0" />
-                        <TextBox  x:Name="NomePessoaTB" Padding="2" Margin="0, 0, 15, 2" Text="DOUGLAS MENCHON GOES MARTINS"/>
+                        <TextBox  x:Name="NomePessoaTB" Padding="2" Margin="0, 0, 15, 2"/>
                     </StackPanel>
                 </Grid>
 
@@ -38,7 +38,7 @@
                     <StackPanel Grid.Column="0" Grid.ColumnSpan="2">
                         <TextBlock Text="CPF" FontWeight="Bold"/>
                         <TextBox   x:Name="CpfPessoaTB" Padding="2" Margin="0, 2, 15, 2" 
-                                     Width="100" HorizontalAlignment="Left" Text="000.000.000-00" />
+                                     Width="100" HorizontalAlignment="Left" />
                     </StackPanel>
                 </Grid>
 
@@ -51,7 +51,7 @@
 
                     <StackPanel Grid.Column="0" Grid.ColumnSpan="2">
                         <TextBlock Text="ENDEREÇO" FontWeight="Bold" Margin="0 2 0 2"/>
-                        <TextBox  x:Name="EnderecoPessoaTB" Padding="2" Text="Rua Líbero Badaró, 252 - Zona 7, Maringá - PR, 87030-080" Margin="0, 2, 15, 2"/>
+                        <TextBox  x:Name="EnderecoPessoaTB" Padding="2" Margin="0, 2, 15, 2"/>
                     </StackPanel>
                 </Grid>
 

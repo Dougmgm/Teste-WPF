@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace Teste
 {
@@ -111,6 +112,11 @@ namespace Teste
 
         private void IncluirPessoa_Click(object sender, RoutedEventArgs e)
         {
+            AbrirPessoa();
+        }
+
+        private void AbrirPessoa()
+        {
             CadastroPessoa cadastroPessoa = new CadastroPessoa();
             cadastroPessoa.IdPessoaTB.Text = (Pessoas.Count + 1).ToString();
             cadastroPessoa.PessoaCadastradaEvent += CadastroPessoa_PessoaCadastradaEvent;
@@ -126,11 +132,18 @@ namespace Teste
         private void AlterarPessoa_Click(object sender, RoutedEventArgs e)
         {
             this.SalvarPessoa.Visibility = Visibility.Visible;
+            AbrirPessoa();
         }
 
         private void SalvarPessoa_Click(object sender, RoutedEventArgs e)
         {
             this.SalvarPessoa.Visibility = Visibility.Collapsed;
+        }
+
+        private void ExcluirPessoa_Click(object sender, RoutedEventArgs e)
+        {
+            dynamic data = DataGridPessoa.SelectedItem;
+            Pessoas.Remove(data);
         }
 
         #endregion
@@ -182,5 +195,10 @@ namespace Teste
 
         #endregion
 
+
+        #region XML
+        
+
+        #endregion
     }
 }

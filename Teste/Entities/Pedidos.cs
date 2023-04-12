@@ -1,17 +1,20 @@
 ﻿using Teste;
 
-public class Pedidos
+namespace Teste
 {
-    public string NomeProduto { get; set; }
-    public Produtos Produto { get; set; }
-    public int Quantidade { get; set; }
-    public double SubTotal { get; set; }
-
-    public Pedidos(string nomeProduto, Produtos produto, int quantidade)
+    public class Pedidos
     {
-        NomeProduto = nomeProduto;
-        Produto = produto;
-        Quantidade = quantidade;
-        SubTotal = quantidade * produto.Preco;
+        public string NomeProduto { get; set; }
+        public Produtos Produto { get; set; }
+        public int Quantidade { get; set; }
+        public double SubTotal { get; set; }
+
+        public Pedidos(string nomeProduto, Produtos produto, int quantidade)
+        {
+            NomeProduto = nomeProduto;
+            Produto = produto;
+            Quantidade = quantidade;
+            SubTotal = quantidade * produto.Preco;
+        }
     }
 }

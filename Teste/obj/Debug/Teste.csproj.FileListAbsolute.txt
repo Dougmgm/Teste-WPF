@@ -32,7 +32,6 @@ C:\Users\Douglas\Desktop\Teste-WPF\Teste\obj\Debug\Teste.pdb
 C:\Users\douglas.menchon\Desktop\C#\Course\Teste-WPF\Teste\bin\Debug\Teste.exe.config
 C:\Users\douglas.menchon\Desktop\C#\Course\Teste-WPF\Teste\bin\Debug\Teste.exe
 C:\Users\douglas.menchon\Desktop\C#\Course\Teste-WPF\Teste\bin\Debug\Teste.pdb
-C:\Users\douglas.menchon\Desktop\C#\Course\Teste-WPF\Teste\obj\Debug\Teste.csprojAssemblyReference.cache
 C:\Users\douglas.menchon\Desktop\C#\Course\Teste-WPF\Teste\obj\Debug\MainWindow.g.cs
 C:\Users\douglas.menchon\Desktop\C#\Course\Teste-WPF\Teste\obj\Debug\App.g.cs
 C:\Users\douglas.menchon\Desktop\C#\Course\Teste-WPF\Teste\obj\Debug\Teste_MarkupCompile.cache
@@ -94,3 +93,4 @@ C:\Users\Douglas\Desktop\Teste-WPF\Teste\obj\Debug\CadastrarPedido.baml
 C:\Users\Douglas\Desktop\Teste-WPF\Teste\obj\Debug\CadastrarProduto.baml
 C:\Users\Douglas\Desktop\Teste-WPF\Teste\obj\Debug\CadastroPessoa.baml
 C:\Users\Douglas\Desktop\Teste-WPF\Teste\obj\Debug\Teste.csproj.CopyComplete
+C:\Users\douglas.menchon\Desktop\C#\Course\Teste-WPF\Teste\obj\Debug\Teste.csprojAssemblyReference.cache

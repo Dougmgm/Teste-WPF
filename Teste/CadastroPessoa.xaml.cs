@@ -26,18 +26,32 @@ namespace Teste
 
         private void SalvarPessoaButton_Click(object sender, RoutedEventArgs e)
         {
-            Pessoa pessoa = new Pessoa
+            if (IdPessoaTB.Text != "" && CpfPessoaTB.Text != "")
             {
-                IdPessoa = Convert.ToInt32(IdPessoaTB.Text),
-                Nome = NomePessoaTB.Text,
-                Cpf = CpfPessoaTB.Text,
-                Endereco = EnderecoPessoaTB.Text
-            };
+                if (Pessoa.ValidaCpf(CpfPessoaTB.Text))
+                {
+                    Pessoa pessoa = new Pessoa
+                    {
+                        IdPessoa = Convert.ToInt32(IdPessoaTB.Text),
+                        Nome = NomePessoaTB.Text,
+                        Cpf = CpfPessoaTB.Text,
+                        Endereco = EnderecoPessoaTB.Text
+                    };
 
-            PessoaCadastradaEvent?.Invoke(this, new PessoaCadastradaEventArgs { PessoaCadastrada = pessoa });
+                    PessoaCadastradaEvent?.Invoke(this, new PessoaCadastradaEventArgs { PessoaCadastrada = pessoa });
 
-            // fecha a janela de cadastro de pessoa
-            this.Close(); 
+                    // fecha a janela de cadastro de pessoa
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("CPF Inválido!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Favor preencher todos os dados obrigatórios");
+            }
         }
     }
 }

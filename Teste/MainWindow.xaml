@@ -43,10 +43,14 @@
 
                         <DataGrid x:Name="DataGridPessoa" Height="324" AutoGenerateColumns="False" CanUserAddRows="False">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="ID" Binding="{Binding IdPessoa}" Width="*" IsReadOnly="True" />
-                                <DataGridTextColumn Header="Nome" Binding="{Binding Nome}" Width="*"/>
-                                <DataGridTextColumn Header="CPF" Binding="{Binding Cpf}" Width="*"/>
-                                <DataGridTextColumn Header="Endereço" Binding="{Binding Endereco}" Width="*"/>
+                                <DataGridTextColumn Header="ID" Width="*" IsReadOnly="True"
+                                                    Binding="{Binding IdPessoa}"  />
+                                <DataGridTextColumn Header="Nome" Width="*"
+                                                    Binding="{Binding Nome}" />
+                                <DataGridTextColumn Header="CPF" Width="*"
+                                                    Binding="{Binding Cpf}" />
+                                <DataGridTextColumn Header="Endereço" Width="*"
+                                                    Binding="{Binding Endereco}" />
                                 <DataGridHyperlinkColumn Header="Pedidos"/>
                             </DataGrid.Columns>
                         </DataGrid>
@@ -66,7 +70,7 @@
                         <Button Grid.Column = "1" Content ="Incluir" x:Name="IncluirPessoa" Click="IncluirPessoa_Click"  Background="SkyBlue" Height="20" Width="75" HorizontalAlignment="Left"/>
                         <Button Grid.Column = "2" Content ="Alterar" x:Name="AlterarPessoa"  Click="AlterarPessoa_Click" Background="SkyBlue" Height="20" Width="75" HorizontalAlignment="Left"/>
                         <Button Grid.Column = "3" Content ="Salvar" x:Name="SalvarPessoa"  Click="SalvarPessoa_Click" Background="SkyBlue" Height="20" Width="75" HorizontalAlignment="Left" Visibility="Collapsed"/>
-                        <Button Grid.Column = "4" Content ="Excluir" x:Name="ExcluirPessoa"  Background="LightPink" Height="20" Width="75" HorizontalAlignment="Center"/>
+                        <Button Grid.Column = "4" Content ="Excluir" x:Name="ExcluirPessoa" Click="ExcluirPessoa_Click" Background="LightPink" Height="20" Width="75" HorizontalAlignment="Center"/>
                     </Grid>
 
                 </Grid>
@@ -75,7 +79,6 @@
                 <Grid Grid.Column="1" x:Name="TelaProduto" Background="AliceBlue" Visibility="Collapsed">
 
                     <StackPanel Margin="10 10 10 90">
-
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="30"/>
@@ -91,16 +94,19 @@
 
                         <DataGrid x:Name="DataGridProduto" Height="324" >
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="Id" Binding="{Binding IdProduto}" Width="*" IsReadOnly="True"/>
-                                <DataGridTextColumn Header="Nome" Binding="{Binding NomeProduto}" Width="*"/>
-                                <DataGridTextColumn Header="Codigo" Binding="{Binding Codigo}" Width="*"/>
-                                <DataGridTextColumn Header="Valor" Binding="{Binding Preco}" Width="*"/>
+                                <DataGridTextColumn Header="Id" 
+                                                    Binding="{Binding IdProduto}" Width="*" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="Nome" 
+                                                    Binding="{Binding NomeProduto}" Width="*"/>
+                                <DataGridTextColumn Header="Codigo" 
+                                                    Binding="{Binding Codigo}" Width="*"/>
+                                <DataGridTextColumn Header="Valor" 
+                                                    Binding="{Binding Preco}" Width="*"/>
                             </DataGrid.Columns>
                         </DataGrid>
                     </StackPanel>
 
                     <Grid Grid.Column="1"  Margin="20 0 0 -300" Height="30">
-
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width=".5*"/>
                             <ColumnDefinition Width=".5*"/>
@@ -117,9 +123,7 @@
 
                 <!-- Tela Pedidos -->
                 <Grid Grid.Column="1" x:Name="TelaPedido" Background="AliceBlue" Visibility="Collapsed">
-
                     <StackPanel Margin="10 10 10 90">
-
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="30"/>
@@ -135,19 +139,25 @@
 
                         <DataGrid x:Name="DataGridPedido" Height="324" >
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="ID" Binding="{Binding IdProduto}" Width="*" />
-                                <DataGridTextColumn Header="Nome" Binding="{Binding NomeProduto}" Width="*"/>
-                                <DataGridTextColumn Header="Produtos" Binding="{Binding Codigo}" Width="*"/>
-                                <DataGridTextColumn Header="Data" Binding="{Binding Valor}" Width="*"/>
-                                <DataGridTextColumn Header="Pagamento" Binding="{Binding Valor}" Width="*"/>
-                                <DataGridTextColumn Header="Status" Binding="{Binding Valor}" Width="*"/>
-                                <DataGridTextColumn Header="Valor Total" Binding="{Binding Valor}" Width="*"/>
+                                <DataGridTextColumn Header="ID" 
+                                                    Binding="{Binding IdProduto}" Width="*" />
+                                <DataGridTextColumn Header="Nome" 
+                                                    Binding="{Binding NomeProduto}" Width="*"/>
+                                <DataGridTextColumn Header="Produtos" 
+                                                    Binding="{Binding Codigo}" Width="*"/>
+                                <DataGridTextColumn Header="Data" 
+                                                    Binding="{Binding Valor}" Width="*"/>
+                                <DataGridTextColumn Header="Pagamento"
+                                                    Binding="{Binding Valor}" Width="*"/>
+                                <DataGridTextColumn Header="Status" 
+                                                    Binding="{Binding Valor}" Width="*"/>
+                                <DataGridTextColumn Header="Valor Total" 
+                                                    Binding="{Binding Valor}" Width="*"/>
                             </DataGrid.Columns>
                         </DataGrid>
                     </StackPanel>
 
                     <Grid Grid.Column="1"  Margin="20 0 0 -300" Height="30">
-
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width=".5*"/>
                             <ColumnDefinition Width=".5*"/>
@@ -163,7 +173,6 @@
                         <Button Grid.Column = "4" Content ="Excluir" x:Name="ExcluirPedido"  Background="LightPink" Height="20" Width="75" HorizontalAlignment="Center"/>
                     </Grid>
                 </Grid>
-
             </Grid>
         </StackPanel>
     </Grid>
