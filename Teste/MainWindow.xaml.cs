@@ -140,6 +140,11 @@ namespace Teste
             this.SalvarPessoa.Visibility = Visibility.Collapsed;
         }
 
+        private void DataGridPessoa_LayoutUpdated_1(object sender, EventArgs e)
+        {
+            ExportarXmlPessoa("C:\\ListaPessoa.xml");
+        }
+
         private void ExcluirPessoa_Click(object sender, RoutedEventArgs e)
         {
             dynamic data = DataGridPessoa.SelectedItem;
@@ -220,14 +225,34 @@ namespace Teste
             xml.Save(fileName);
         }
 
+        private void LerXmlPessoa(string fileName)
+        {
+            try
+            {
+                var xml = XElement.Load(fileName);
+
+                //IdPessoaLista = int.Parse(xml.Element("IdPessoaLista").Value);
+
+                foreach (var element in xml.Elements("Pessoa"))
+                {
+                    var pessoa = new Pessoa
+                    {
+                        IdPessoa = int.Parse(element.Element("IdPessoa").Value),
+                        Nome = element.Element("Nome").Value,
+                        Cpf = element.Element("Cpf").Value,
+                        Endereco = element.Element("Endereco").Value,
+                    };
+                    Pessoas.Add(pessoa);
+                }
+            }
+            catch
+            {
+                return;
+            }
+        }
+
 
         #endregion
 
-        //AddingNewItem para enviar no XML sempre que adicionar alguem
-
-        private void DataGridPessoa_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            ExportarXmlPessoa("C:\\ListaPessoa.xml");
-        }
     }
 }

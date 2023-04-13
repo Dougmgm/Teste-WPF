@@ -62,8 +62,10 @@
                         <ColumnDefinition Width="4*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Button Grid.Column="0" x:Name="SalvarPessoaButton" Content="Salvar" Click="SalvarPessoaButton_Click" Width="100" HorizontalAlignment="Left" Background="GreenYellow"/>
-                    <Button Grid.Column="1" x:Name="CancelarPessoaButton" Click="CancelarPessoa_Click" Content="Cancelar" Width="100" HorizontalAlignment="Right" Background="Red" />
+                    <Button Grid.Column="0" x:Name="SalvarPessoaButton" Content="Salvar" 
+                            Click="SalvarPessoaButton_Click" Width="100" HorizontalAlignment="Left" Background="GreenYellow"/>
+                    <Button Grid.Column="1" x:Name="CancelarPessoaButton" 
+                            Click="CancelarPessoa_Click" Content="Cancelar" Width="100" HorizontalAlignment="Right" Background="Red" />
                 </Grid>
             </StackPanel>
 
