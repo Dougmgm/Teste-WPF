@@ -145,18 +145,6 @@ namespace Teste
 
         private void PedidoPessoa_Click(object sender, RoutedEventArgs e)
         {
-            DataRowView selectedRow = (DataRowView)DataGridProduto.SelectedItem;
-            if (selectedRow != null)
-            {
-                string nome = selectedRow["Nome"].ToString();
-                CadastrarPedido cadastrarPedido = new CadastrarPedido();
-                cadastrarPedido.NomePessoaPedidoTB.Text = nome;
-                cadastrarPedido.Show();
-            }
-            else
-            {
-                MessageBox.Show("Por favor, selecione uma linha do DataGrid.");
-            }
         }
 
         private void AlterarPessoa_Click(object sender, RoutedEventArgs e)
