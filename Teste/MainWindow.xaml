@@ -33,10 +33,10 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
 
-                            <Button Grid.Column="0" Height="20" Width="20" HorizontalAlignment="Left" Margin="3">
+                            <Button x:Name="BtnPesquisaPessoa" Click="BtnPesquisaPessoa_Click" Grid.Column="0" Height="20" Width="20" HorizontalAlignment="Left" Margin="3">
                                 <Image Source="Images/Lupa.png"/>
                             </Button>
-                            <TextBox Grid.Column="1" Text="EXEMPLO DE PESQUISA" Background="White"
+                            <TextBox x:Name="PesquisaPessoaTB" Grid.Column="1" Background="White"
                                        VerticalAlignment="Center" />
                         </Grid>
 
@@ -53,7 +53,13 @@
                                                     Binding="{Binding Cpf}" />
                                 <DataGridTextColumn Header="Endereço" Width="*"
                                                     Binding="{Binding Endereco}" />
-                                <DataGridHyperlinkColumn Header="Pedidos"/>
+                                <DataGridTemplateColumn Header="Pedidos" Width=".6*">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button x:Name="PedidosPessoa" Content="Pedir"  Background="DeepSkyBlue" Click="PedidosPessoa_Click" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
                             </DataGrid.Columns>
                         </DataGrid>
                     </StackPanel>
@@ -92,14 +98,17 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             
-                            <Button Grid.Column="0" Height="20" Width="20" HorizontalAlignment="Left" Margin="3">
+                            <Button x:Name="BtnPesquisaProduto" Click="BtnPesquisaProduto_Click" Grid.Column="0" Height="20" Width="20" HorizontalAlignment="Left" Margin="3">
                                 <Image Source="Images/Lupa.png"/>
                             </Button>
-                            <TextBox Grid.Column="1" Text="EXEMPLO DE PESQUISA" Background="White"
+                            <TextBox x:Name="PesquisaProdutoTB" Grid.Column="1" Background="White"
                                        VerticalAlignment="Center" />
                         </Grid>
 
-                        <DataGrid x:Name="DataGridProduto" Height="324" >
+                        <DataGrid x:Name="DataGridProduto" Height="324" 
+                                  AutoGenerateColumns="False" 
+                                  CanUserAddRows="False"
+                                  LayoutUpdated="DataGridProduto_LayoutUpdated"  >
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Id" 
                                                     Binding="{Binding IdProduto}" Width="*" IsReadOnly="True"/>
@@ -143,7 +152,7 @@
                             <Button Grid.Column="0" Height="20" Width="20" HorizontalAlignment="Left" Margin="3">
                                 <Image Source="Images/Lupa.png"/>
                             </Button>
-                            <TextBox Grid.Column="1" Text="EXEMPLO DE PESQUISA" Background="White"
+                            <TextBox Grid.Column="1" Background="White"
                                        VerticalAlignment="Center" />
                         </Grid>
 

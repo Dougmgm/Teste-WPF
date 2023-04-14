@@ -41,7 +41,7 @@ namespace Teste
 
             produto.IdProduto = Convert.ToInt32(IdProdutoTB.Text);
             produto.NomeProduto = NomeProdutoTB.Text;
-            produto.Codigo = Convert.ToInt32(CodigoProdutoTB.Text);
+            produto.Codigo = CodigoProdutoTB.Text;
             produto.Preco = Convert.ToDouble(ValorProdutoTB.Text);
 
             ProdutosCadastradosEvent?.Invoke(this, new ProdutosCadastradosEventArgs { ProdutosCadastrados = produto });

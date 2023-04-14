@@ -10,14 +10,14 @@ namespace Teste
     {
         public int IdProduto { get; set; }
         public string NomeProduto { get; set; }
-        public int Codigo { get; set; }
+        public string Codigo { get; set; }
         public double Preco { get; set; }
 
         public Produtos()
         {
         }
 
-        public Produtos(int idProduto, string nomeProduto, int codigo, double preco)
+        public Produtos(int idProduto, string nomeProduto, string codigo, double preco)
         {
             IdProduto = idProduto;
             NomeProduto = nomeProduto;
