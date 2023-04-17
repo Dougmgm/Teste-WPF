@@ -94,3 +94,43 @@ C:\Users\Douglas\Desktop\Teste-WPF\Teste\obj\Debug\CadastrarProduto.baml
 C:\Users\Douglas\Desktop\Teste-WPF\Teste\obj\Debug\CadastroPessoa.baml
 C:\Users\Douglas\Desktop\Teste-WPF\Teste\obj\Debug\Teste.csproj.CopyComplete
 C:\Users\douglas.menchon\Desktop\C#\Course\Teste-WPF\Teste\obj\Debug\Teste.csprojAssemblyReference.cache
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\bin\Debug\Teste.exe.config
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\bin\Debug\Teste.exe
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\bin\Debug\Teste.pdb
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\bin\Debug\Xceed.Wpf.AvalonDock.dll
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\bin\Debug\Xceed.Wpf.Toolkit.dll
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\bin\Debug\cs-CZ\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\bin\Debug\ja-JP\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\bin\Debug\nl-BE\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\obj\Debug\Teste.csprojAssemblyReference.cache
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\obj\Debug\CadastrarPedido.g.cs
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\obj\Debug\CadastrarProduto.g.cs
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\obj\Debug\CadastroPessoa.g.cs
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\obj\Debug\MainWindow.g.cs
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\obj\Debug\App.g.cs
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\obj\Debug\Teste_MarkupCompile.cache
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\obj\Debug\Teste_MarkupCompile.lref
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\obj\Debug\CadastrarPedido.baml
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\obj\Debug\CadastrarProduto.baml
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\obj\Debug\CadastroPessoa.baml
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\obj\Debug\MainWindow.baml
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\obj\Debug\Teste.g.resources
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\obj\Debug\Teste.Properties.Resources.resources
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\obj\Debug\Teste.csproj.GenerateResource.cache
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\obj\Debug\Teste.csproj.CoreCompileInputs.cache
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\obj\Debug\Teste.csproj.CopyComplete
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\obj\Debug\Teste.exe
+C:\Users\douglas.menchon\Desktop\Teste WPF\Teste-WPF\Teste\obj\Debug\Teste.pdb

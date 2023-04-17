@@ -24,22 +24,23 @@
 
                     <StackPanel Grid.Column="0">
                         <TextBlock Text="NOME" FontWeight="Bold" Margin="0 20 0 0" />
-                        <TextBox x:Name="NomePessoaPedidoTB" IsReadOnly="True" Background="#eee" Padding="2" Margin="0, 0, 15, 2" Text="DOUGLAS MENCHON GOES MARTINS"/>
+                        <TextBox x:Name="NomePessoaPedidoTB" IsReadOnly="True" Background="#eee" Padding="2" Margin="0, 0, 15, 2"/>
                     </StackPanel>
 
                 </Grid>
 
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="3*" />
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width=".5*"/>
+                        <ColumnDefinition Width="125*" />
+                        <ColumnDefinition Width="222*"/>
+                        <ColumnDefinition Width="116*"/>
+                        <ColumnDefinition Width="116*"/>
+                        <ColumnDefinition Width="115*"/>
+                        <ColumnDefinition Width="58*"/>
                     </Grid.ColumnDefinitions>
-                    
-                    
-                    <StackPanel Grid.Column="0">
+
+
+                    <StackPanel Grid.Column="0" Grid.ColumnSpan="2">
                         <TextBlock Text="PRODUTOS" FontWeight="Bold" Margin="0 20 0 0" />
                         <ComboBox x:Name="ListaProdutosCB" Padding="2" Margin="0, 0, 15, 2" Text="DOUGLAS MENCHON GOES MARTINS">
                             <ComboBoxItem Content="Sapato"/>
@@ -50,22 +51,22 @@
                         </ComboBox>
                     </StackPanel>
 
-                    <StackPanel Grid.Column="1" Margin="0 0 20 0">
+                    <StackPanel Grid.Column="2" Margin="0 0 20 0">
                         <TextBlock Text="QUANTIDADE" FontWeight="Bold" Margin="0 20 0 0" />
                         <TextBox x:Name="QuantidadeTB" Padding="2" Margin="0 0 0 2" Text="999"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Column="2" Margin="0 0 20 0">
+                    <StackPanel Grid.Column="3" Margin="0 0 20 0">
                         <TextBlock Text="PREÇO" FontWeight="Bold" Margin="0 20 0 0" />
                         <TextBox x:Name="PrecoTB" IsReadOnly="True" Background="#eee" Padding="2" Margin="0 0 0 2" Text="999"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Column="3" Margin="0 0 20 0">
+                    <StackPanel Grid.Column="4" Margin="0 0 20 0">
                         <TextBlock Text="SUBTOTAL" FontWeight="Bold" Margin="0 20 0 0" />
                         <TextBox x:Name="SubTotalTB" IsReadOnly="True" FontWeight="SemiBold" Background="#eee" Padding="2" Margin="0 0 0 2" Text="999"/>
                     </StackPanel>
 
-                    <Button x:Name="IncluirProdutoPedido" Click="IncluirProdutoPedido_Click"  Grid.Column="4" Height="30" Width="30" Margin="0 0 0 2" VerticalAlignment="Bottom">
+                    <Button x:Name="IncluirProdutoPedido" Click="IncluirProdutoPedido_Click"  Grid.Column="5" Height="30" Width="30" Margin="14,0,14,2" VerticalAlignment="Bottom">
                         <Image Source="Images/SetaBaixo.jpg"/>
                     </Button>
 

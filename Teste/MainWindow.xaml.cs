@@ -41,7 +41,6 @@ namespace Teste
 
             LerXmlPessoa("C:\\ListaPessoa.xml");
             LerXmlProduto("C:\\ListaProduto.xml");
-
         }
 
         #region Gerenciador de cadastros
@@ -92,6 +91,8 @@ namespace Teste
             TelaPessoa.Visibility = Visibility.Visible;
             TelaProduto.Visibility = Visibility.Hidden;
             TelaPedido.Visibility = Visibility.Hidden;
+
+            ExportarXmlPessoa("C:\\ListaPessoa.xml");
         }
 
         private void ProdutoButton_Click(object sender, RoutedEventArgs e)
@@ -145,7 +146,10 @@ namespace Teste
 
         private void PedidoPessoa_Click(object sender, RoutedEventArgs e)
         {
+            CadastrarPedido cadastrarPedido = new CadastrarPedido();
+            cadastrarPedido.Show();
         }
+
 
         private void AlterarPessoa_Click(object sender, RoutedEventArgs e)
         {
@@ -158,9 +162,9 @@ namespace Teste
             this.SalvarPessoa.Visibility = Visibility.Collapsed;
         }
 
-        private void DataGridPessoa_LayoutUpdated_1(object sender, EventArgs e)
+        private void PedidosPessoa_Click(object sender, RoutedEventArgs e)
         {
-            ExportarXmlPessoa("C:\\ListaPessoa.xml");
+            AbrirPedido();
         }
 
         private void ExcluirPessoa_Click(object sender, RoutedEventArgs e)
@@ -208,12 +212,6 @@ namespace Teste
             this.SalvarProduto.Visibility = Visibility.Collapsed;
         }
 
-        private void DataGridProduto_LayoutUpdated(object sender, EventArgs e)
-        {
-            ExportarXmlProduto("C:\\ListaPessoa.xml");
-        }
-
-
         #endregion
 
         #region Botões Pedidos
@@ -222,6 +220,12 @@ namespace Teste
         private void IncluirPedido_Click(object sender, RoutedEventArgs e)
         {
             //PARA DEPOIS
+        }
+
+        private void AbrirPedido()
+        {
+            CadastrarPedido cadastrarPedido = new CadastrarPedido();
+            cadastrarPedido.Show();
         }
 
         private void AlterarPedido_Click(object sender, RoutedEventArgs e)
@@ -267,14 +271,14 @@ namespace Teste
         private void ExportarXmlProduto(string fileName)
         {
 
-            var produtosXml = DataGridProduto.ItemsSource as List<Pessoa>;
+            var produtosXml = DataGridProduto.ItemsSource as List<Produtos>;
 
             if (Produtos == null)
             {
                 return;
             }
 
-            var xml = new XElement("Produto",
+            var xml = new XElement("Produtos",
                 //new XElement("IdPessoaLista", IdPessoaLista),
                 from p in Produtos
                 select new XElement("Produto",
@@ -341,8 +345,14 @@ namespace Teste
         }
         #endregion
 
-        private void PedidosPessoa_Click(object sender, RoutedEventArgs e)
+        private void DataGridPessoa_LayoutUpdated(object sender, EventArgs e)
         {
+            ExportarXmlPessoa("C:\\ListaPessoa.xml");
+        }
+
+        private void DataGridProduto_LayoutUpdated_1(object sender, EventArgs e)
+        {
+            ExportarXmlProduto("C:\\ListaProduto.xml");
         }
     }
 }
