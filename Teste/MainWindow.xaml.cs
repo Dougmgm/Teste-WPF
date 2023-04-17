@@ -165,6 +165,8 @@ namespace Teste
         private void PedidosPessoa_Click(object sender, RoutedEventArgs e)
         {
             AbrirPedido();
+            ComboBox ListaProdutosCB = CadastrarPedido.ListaProdutosComboBox;
+            ListaProdutosCB.ItemsSource = Produtos;
         }
 
         private void ExcluirPessoa_Click(object sender, RoutedEventArgs e)
@@ -343,7 +345,6 @@ namespace Teste
                 return;
             }
         }
-        #endregion
 
         private void DataGridPessoa_LayoutUpdated(object sender, EventArgs e)
         {
@@ -354,5 +355,8 @@ namespace Teste
         {
             ExportarXmlProduto("C:\\ListaProduto.xml");
         }
+
+        #endregion
+
     }
 }
