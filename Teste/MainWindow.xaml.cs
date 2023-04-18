@@ -15,9 +15,10 @@ namespace Teste
     {
         // Declaração da lista de Pessoas
         public ObservableCollection<Pessoa> Pessoas { get; set; } = new ObservableCollection<Pessoa>();
-
         // Declaração da lista de Produtos
         public ObservableCollection<Produto> Produtos { get; set; } = new ObservableCollection<Produto>();
+        private int UltimoIdPessoa { get; set; }
+        private int UltimoIdProduto { get; set; }
 
         public MainWindow()
         {
@@ -27,7 +28,6 @@ namespace Teste
             // Define a origem dos dados do DataGridPessoa como a lista de Pessoas
             DataGridPessoa.ItemsSource = Pessoas;
             DataGridProduto.ItemsSource = Produtos;
-
 
             LerXmlPessoa("C:\\ListaPessoa.xml");
             LerXmlProduto("C:\\ListaProduto.xml");
@@ -46,11 +46,11 @@ namespace Teste
             else
             {
                 // Caso contrário, o IdPessoa é o último id cadastrado + 1
-                int ultimoId = Pessoas.Max(p => p.IdPessoa);
-                e.PessoaCadastrada.IdPessoa = ultimoId + 1;
+                e.PessoaCadastrada.IdPessoa = UltimoIdPessoa + 1;
             }
 
             // Adiciona a pessoa cadastrada na lista de Pessoas
+            UltimoIdPessoa++;
             Pessoas.Add(e.PessoaCadastrada);
         }
 
@@ -64,11 +64,12 @@ namespace Teste
             else
             {
                 // Caso contrário, o IdProduto é o último id cadastrado + 1
-                int ultimoId = Produtos.Max(p => p.IdProduto);
-                e.ProdutosCadastrados.IdProduto = ultimoId + 1;
+                //int ultimoId = Produtos.Max(p => p.IdProduto);
+                e.ProdutosCadastrados.IdProduto = UltimoIdProduto + 1;
             }
 
             // Adiciona a pessoa cadastrada na lista de Produtos
+            UltimoIdProduto++;
             Produtos.Add(e.ProdutosCadastrados);
         }
 
@@ -128,7 +129,7 @@ namespace Teste
         private void AbrirPessoa()
         {
             CadastroPessoa cadastroPessoa = new CadastroPessoa();
-            cadastroPessoa.IdPessoaTB.Text = (Pessoas.Count + 1).ToString();
+            cadastroPessoa.IdPessoaTB.Text = (UltimoIdPessoa + 1).ToString();
             cadastroPessoa.PessoaCadastradaEvent += CadastroPessoa_PessoaCadastradaEvent;
             cadastroPessoa.Show();
         }
@@ -142,8 +143,20 @@ namespace Teste
 
         private void AlterarPessoa_Click(object sender, RoutedEventArgs e)
         {
+            //TALVEZ ALTERAR POR BOTÃO DENTRO DO GRID
+            CadastroPessoa cadastroPessoa = new CadastroPessoa();
+            dynamic data = DataGridPessoa.SelectedItem;
+            int indexId = data.IdPessoa;
+            int indexList = Pessoas.IndexOf(Pessoas.Where(p => p.IdPessoa == indexId).FirstOrDefault());
+            if(indexList != -1)
+            {
+                AbrirPessoa();
+                cadastroPessoa.IdPessoaTB.Text = Pessoas[indexList].IdPessoa.ToString();
+                cadastroPessoa.NomePessoaTB.Text = Pessoas[indexList].Nome;
+                cadastroPessoa.CpfPessoaTB.Text = Pessoas[indexList].Cpf;
+                cadastroPessoa.EnderecoPessoaTB.Text = Pessoas[indexList].Endereco;
+            }
             this.SalvarPessoa.Visibility = Visibility.Visible;
-            AbrirPessoa();
         }
 
         private void SalvarPessoa_Click(object sender, RoutedEventArgs e)
@@ -180,7 +193,7 @@ namespace Teste
         private void IncluirProduto_Click(object sender, RoutedEventArgs e)
         {
             CadastrarProduto cadastrarProduto = new CadastrarProduto();
-            cadastrarProduto.IdProdutoTB.Text = (Produtos.Count + 1).ToString();
+            cadastrarProduto.IdProdutoTB.Text = (UltimoIdProduto + 1).ToString();
 
             // Registra o evento ProdutosCadastradosEvent da janela CadastrarProduto
             cadastrarProduto.ProdutosCadastradosEvent += CadastrarProduto_ProdutosCadastradosEvent;
@@ -255,7 +268,7 @@ namespace Teste
             }
 
             var xml = new XElement("Pessoas",
-                //new XElement("IdPessoaLista", IdPessoaLista),
+                new XElement("UltimoIdPessoa", UltimoIdPessoa),
                 from p in Pessoas
                 select new XElement("Pessoa",
                     new XElement("IdPessoa", p.IdPessoa),
@@ -278,7 +291,7 @@ namespace Teste
             }
 
             var xml = new XElement("Produtos",
-                //new XElement("IdPessoaLista", IdPessoaLista),
+                new XElement("UltimoIdProduto", UltimoIdProduto),
                 from p in Produtos
                 select new XElement("Produto",
                     new XElement("IdProduto", p.IdProduto),
@@ -297,7 +310,7 @@ namespace Teste
             {
                 var xml = XElement.Load(fileName);
 
-                //IdPessoaLista = int.Parse(xml.Element("IdPessoaLista").Value);
+                UltimoIdPessoa = int.Parse(xml.Element("UltimoIdPessoa").Value);
 
                 foreach (var element in xml.Elements("Pessoa"))
                 {
@@ -323,7 +336,7 @@ namespace Teste
             {
                 var xml = XElement.Load(fileName);
 
-                //IdPessoaLista = int.Parse(xml.Element("IdPessoaLista").Value);
+                UltimoIdProduto = int.Parse(xml.Element("UltimoIdProduto").Value);
 
                 foreach (var element in xml.Elements("Produto"))
                 {
@@ -342,7 +355,6 @@ namespace Teste
                 return;
             }
         }
-
 
         private void DataGridPessoa_LayoutUpdated(object sender, EventArgs e)
         {

@@ -17,6 +17,7 @@ namespace Teste
         {
             InitializeComponent();
             DataGridPedido.ItemsSource = Pedidos;
+            //talvez aqui
             Loaded += CadastrarPessoa_Loaded;
         }
 
@@ -53,7 +54,7 @@ namespace Teste
             }
             else
             {
-                MessageBox.Show("Por favor preenhcer a quantidade desejada");
+                MessageBox.Show("Por favor preencher a quantidade desejada");
             }
         }
 

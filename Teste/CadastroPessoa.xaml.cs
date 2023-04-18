@@ -16,7 +16,6 @@ namespace Teste
         public CadastroPessoa()
         {
             InitializeComponent();
-
         }
 
         private void CancelarPessoa_Click(object sender, RoutedEventArgs e)
