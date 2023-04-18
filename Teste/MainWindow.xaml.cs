@@ -3,17 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Xml.Linq;
 
 namespace Teste
@@ -27,7 +17,7 @@ namespace Teste
         public ObservableCollection<Pessoa> Pessoas { get; set; } = new ObservableCollection<Pessoa>();
 
         // Declaração da lista de Produtos
-        public ObservableCollection<Produtos> Produtos { get; set; } = new ObservableCollection<Produtos>();
+        public ObservableCollection<Produto> Produtos { get; set; } = new ObservableCollection<Produto>();
 
         public MainWindow()
         {
@@ -91,8 +81,7 @@ namespace Teste
             TelaPessoa.Visibility = Visibility.Visible;
             TelaProduto.Visibility = Visibility.Hidden;
             TelaPedido.Visibility = Visibility.Hidden;
-
-            ExportarXmlPessoa("C:\\ListaPessoa.xml");
+            PesquisaPessoaTB.Text = "";
         }
 
         private void ProdutoButton_Click(object sender, RoutedEventArgs e)
@@ -100,6 +89,7 @@ namespace Teste
             TelaProduto.Visibility = Visibility.Visible;
             TelaPessoa.Visibility = Visibility.Hidden;
             TelaPedido.Visibility = Visibility.Hidden;
+            PesquisaProdutoTB.Text = "";
 
         }
 
@@ -137,7 +127,6 @@ namespace Teste
 
         private void AbrirPessoa()
         {
-
             CadastroPessoa cadastroPessoa = new CadastroPessoa();
             cadastroPessoa.IdPessoaTB.Text = (Pessoas.Count + 1).ToString();
             cadastroPessoa.PessoaCadastradaEvent += CadastroPessoa_PessoaCadastradaEvent;
@@ -164,9 +153,18 @@ namespace Teste
 
         private void PedidosPessoa_Click(object sender, RoutedEventArgs e)
         {
-            AbrirPedido();
-            ComboBox ListaProdutosCB = CadastrarPedido.ListaProdutosComboBox;
-            ListaProdutosCB.ItemsSource = Produtos;
+            //ARRUMAR VERIFICAÇÃO DA LISTA DE PRODUTOS CASO ESTEJA VAZIA
+            CadastrarPedido cadastrarPedido = new CadastrarPedido();
+
+            dynamic data = DataGridPessoa.SelectedItem;
+            string result = data.Nome;
+            cadastrarPedido.NomePessoaPedidoTB.Text = result.ToUpper();
+
+            foreach(Produto produto in Produtos)
+            {
+                cadastrarPedido.ListaProdutosCB.Items.Add(produto.NomeProduto);
+            }
+            cadastrarPedido.ShowDialog();
         }
 
         private void ExcluirPessoa_Click(object sender, RoutedEventArgs e)
@@ -187,7 +185,6 @@ namespace Teste
             // Registra o evento ProdutosCadastradosEvent da janela CadastrarProduto
             cadastrarProduto.ProdutosCadastradosEvent += CadastrarProduto_ProdutosCadastradosEvent;
             cadastrarProduto.Show();
-
         }
 
         private void BtnPesquisaProduto_Click(object sender, RoutedEventArgs e)
@@ -214,6 +211,13 @@ namespace Teste
             this.SalvarProduto.Visibility = Visibility.Collapsed;
         }
 
+        private void ExcluirProduto_Click(object sender, RoutedEventArgs e)
+        {
+            dynamic data = DataGridProduto.SelectedItem;
+            Produtos.Remove(data);
+        }
+
+
         #endregion
 
         #region Botões Pedidos
@@ -222,12 +226,6 @@ namespace Teste
         private void IncluirPedido_Click(object sender, RoutedEventArgs e)
         {
             //PARA DEPOIS
-        }
-
-        private void AbrirPedido()
-        {
-            CadastrarPedido cadastrarPedido = new CadastrarPedido();
-            cadastrarPedido.Show();
         }
 
         private void AlterarPedido_Click(object sender, RoutedEventArgs e)
@@ -244,7 +242,6 @@ namespace Teste
 
         #endregion
 
-
         #region XML
 
         private void ExportarXmlPessoa(string fileName)
@@ -257,7 +254,7 @@ namespace Teste
                 return;
             }
 
-            var xml = new XElement("Pessoa",
+            var xml = new XElement("Pessoas",
                 //new XElement("IdPessoaLista", IdPessoaLista),
                 from p in Pessoas
                 select new XElement("Pessoa",
@@ -273,7 +270,7 @@ namespace Teste
         private void ExportarXmlProduto(string fileName)
         {
 
-            var produtosXml = DataGridProduto.ItemsSource as List<Produtos>;
+            var produtosXml = DataGridProduto.ItemsSource as List<Produto>;
 
             if (Produtos == null)
             {
@@ -330,7 +327,7 @@ namespace Teste
 
                 foreach (var element in xml.Elements("Produto"))
                 {
-                    var produto = new Produtos
+                    var produto = new Produto
                     {
                         IdProduto = int.Parse(element.Element("IdProduto").Value),
                         NomeProduto = element.Element("NomeProduto").Value,
@@ -345,6 +342,7 @@ namespace Teste
                 return;
             }
         }
+
 
         private void DataGridPessoa_LayoutUpdated(object sender, EventArgs e)
         {

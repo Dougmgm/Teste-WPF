@@ -33,7 +33,7 @@ namespace Teste
                     Pessoa pessoa = new Pessoa
                     {
                         IdPessoa = Convert.ToInt32(IdPessoaTB.Text),
-                        Nome = NomePessoaTB.Text,
+                        Nome = NomePessoaTB.Text.ToUpper(),
                         Cpf = CpfPessoaTB.Text,
                         Endereco = EnderecoPessoaTB.Text
                     };

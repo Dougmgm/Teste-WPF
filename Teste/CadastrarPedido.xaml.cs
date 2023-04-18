@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -12,17 +13,11 @@ namespace Teste
     {
         public ObservableCollection<Pedidos> Pedidos { get; set; } = new ObservableCollection<Pedidos>();
 
-        public static ComboBox ListaProdutosComboBox { get; set; }
-
-
-
         public CadastrarPedido()
         {
             InitializeComponent();
             DataGridPedido.ItemsSource = Pedidos;
             Loaded += CadastrarPessoa_Loaded;
-            // para receber dados da lista de produtos
-            ListaProdutosComboBox = ListaProdutosCB;
         }
 
         private void SalvarPedido_Click(object sender, RoutedEventArgs e)
@@ -36,8 +31,10 @@ namespace Teste
 
         private void IncluirProdutoPedido_Click(object sender, RoutedEventArgs e)
         {
+            if(QuantidadeTB.Text != "")
+            {
             // Cria um novo objeto Produtos correspondente ao produto selecionado
-            Produtos produtoSelecionado = new Produtos
+            Produto produtoSelecionado = new Produto
             {
                 NomeProduto = ListaProdutosCB.Text,
                 Preco = double.Parse(PrecoTB.Text)
@@ -53,11 +50,20 @@ namespace Teste
             double valorTotal = Pedidos.Sum(p => p.SubTotal);
 
             ValorTotalTB.Text = "R$ " + valorTotal.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Por favor preenhcer a quantidade desejada");
+            }
         }
 
         private void CadastrarPessoa_Loaded(object sender, RoutedEventArgs e)
         {
         }
 
+        private void ListaProdutosCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            PrecoTB.Text = "132";
+        }
     }
 }

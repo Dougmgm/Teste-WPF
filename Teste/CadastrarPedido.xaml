@@ -42,23 +42,17 @@
 
                     <StackPanel Grid.Column="0" Grid.ColumnSpan="2">
                         <TextBlock Text="PRODUTOS" FontWeight="Bold" Margin="0 20 0 0" />
-                        <ComboBox x:Name="ListaProdutosCB" Padding="2" Margin="0, 0, 15, 2">
-                            <ComboBoxItem Content="Sapato"/>
-                            <ComboBoxItem Content="Camisa"/>
-                            <ComboBoxItem Content="Computador"/>
-                            <ComboBoxItem Content="Mesa"/>
-                            <ComboBoxItem Content="Carro"/>
-                        </ComboBox>
+                        <ComboBox x:Name="ListaProdutosCB" SelectionChanged="ListaProdutosCB_SelectionChanged" Padding="2" Margin="0, 0, 15, 2"/>
                     </StackPanel>
 
                     <StackPanel Grid.Column="2" Margin="0 0 20 0">
                         <TextBlock Text="QUANTIDADE" FontWeight="Bold" Margin="0 20 0 0" />
-                        <TextBox x:Name="QuantidadeTB" Padding="2" Margin="0 0 0 2" Text="999"/>
+                        <TextBox x:Name="QuantidadeTB" Padding="2" Margin="0 0 0 2"/>
                     </StackPanel>
 
                     <StackPanel Grid.Column="3" Margin="0 0 20 0">
                         <TextBlock Text="PREÇO" FontWeight="Bold" Margin="0 20 0 0" />
-                        <TextBox x:Name="PrecoTB" IsReadOnly="True" Background="#eee" Padding="2" Margin="0 0 0 2" Text="999"/>
+                        <TextBox x:Name="PrecoTB" IsReadOnly="True" Background="#eee" Padding="2" Margin="0 0 0 2"/>
                     </StackPanel>
 
                     <StackPanel Grid.Column="4" Margin="0 0 20 0">

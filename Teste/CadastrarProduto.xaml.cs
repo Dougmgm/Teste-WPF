@@ -1,17 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using static Teste.CadastroPessoa;
 
 namespace Teste
 {
@@ -22,7 +10,7 @@ namespace Teste
 
         public class ProdutosCadastradosEventArgs : EventArgs
         {
-            public Produtos ProdutosCadastrados { get; set; }
+            public Produto ProdutosCadastrados { get; set; }
         }
 
         public CadastrarProduto()
@@ -37,10 +25,10 @@ namespace Teste
 
         private void IncluirProduto_Click(object sender, RoutedEventArgs e)
         {
-            Produtos produto = new Produtos();
+            Produto produto = new Produto();
 
             produto.IdProduto = Convert.ToInt32(IdProdutoTB.Text);
-            produto.NomeProduto = NomeProdutoTB.Text;
+            produto.NomeProduto = NomeProdutoTB.Text.ToUpper();
             produto.Codigo = CodigoProdutoTB.Text;
             produto.Preco = Convert.ToDouble(ValorProdutoTB.Text);
 

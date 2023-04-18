@@ -52,7 +52,7 @@
                                 <Image Source="Images/Lupa.png"/>
                             </Button>
                             <TextBox x:Name="PesquisaPessoaTB" Grid.Column="1" Background="White"
-                                       VerticalAlignment="Center" />
+                                       VerticalAlignment="Center" CharacterCasing="Upper" />
                         </Grid>
 
                         <DataGrid x:Name="DataGridPessoa" Height="324" 
@@ -124,7 +124,7 @@
                                 <Image Source="Images/Lupa.png"/>
                             </Button>
                             <TextBox x:Name="PesquisaProdutoTB" Grid.Column="1" Background="White"
-                                       VerticalAlignment="Center" />
+                                       VerticalAlignment="Center"  CharacterCasing="Upper"/>
                         </Grid>
 
                         <DataGrid x:Name="DataGridProduto" Height="324" 
@@ -139,7 +139,7 @@
                                 <DataGridTextColumn Header="Codigo" 
                                                     Binding="{Binding Codigo}" Width="*"/>
                                 <DataGridTextColumn Header="Valor" 
-                                                    Binding="{Binding Preco}" Width="*"/>
+                                                    Binding="{Binding Preco, StringFormat=N2}" Width="*"/>
                             </DataGrid.Columns>
                         </DataGrid>
                     </StackPanel>
@@ -160,7 +160,8 @@
                                 Background="SkyBlue" Height="20" Width="75" HorizontalAlignment="Left"/>
                         <Button Grid.Column = "2" Content ="Salvar" x:Name="SalvarProduto"  
                                 Click="SalvarProduto_Click" Visibility="Collapsed" Background="SkyBlue" Height="20" Width="75" HorizontalAlignment="Left"/>
-                        <Button Grid.Column = "3" Content ="Excluir" x:Name="ExcluirProduto"  Background="LightPink" Height="20" Width="75" HorizontalAlignment="Center"/>
+                        <Button Grid.Column = "3" Content ="Excluir" x:Name="ExcluirProduto" 
+                                Click="ExcluirProduto_Click" Background="LightPink" Height="20" Width="75" HorizontalAlignment="Center"/>
                     </Grid>
                 </Grid>
 
